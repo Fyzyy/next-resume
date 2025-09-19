@@ -1,0 +1,119 @@
+{
+  "profile": {
+    "name": "Maximilien Vidiani",
+    "title": "Software Engineer - Fullstack",
+    "location": ["Bordeaux", "Paris", "Luxembourg"],
+    "email": "maximilien.vidiani@gmail.com",
+    "phone": "+33 6 95 84 66 81",
+    "linkedin": "https://www.linkedin.com/in/maximilien-vidiani-481692244/",
+    "github": "https://github.com/Fyzyy",
+    "summary": "Seeking a full-time position as a software engineer, leveraging experience in full-stack development, API design, and software quality assurance. Motivated to work in agile teams on impactful projects involving web technologies, or AI systems."
+
+  },
+  "skills": {
+    "Frontend": ["Angular 19+", "TypeScript", "Next.js", "HTML/CSS", "Tailwind"],
+    "Backend": ["Spring Boot", "Java", "PostgreSQL", "OpenAPI", "Python", "SQL"],
+    "DevOps": ["GitHub", "Azure DevOps", "Docker", "Kubernetes"],
+    "Tools": ["IntelliJ", "LLM", "Jira"]
+  },
+  "experience": [
+    {
+      "company": "Banque de Luxembourg",
+      "role": "Fullstack Intern",
+      "logo": "bdl.png",
+      "location": "Luxembourg",
+      "start": "2025-02",
+      "end": "2025-08",
+      "tasks": [
+        "Participated in the redesign of a document management application within a team of 5 developers in an agile environment",
+        "Developed and maintained RESTful API routes using Spring and OpenAPI",
+        "Contributed to the front-end development using Angular 19",
+        "Integrated front-end and back-end tests to ensure code quality and reliability",
+        "Collaborated closely with team members to deliver iterative features and improvements"
+      ]
+    },
+    {
+      "company": "CEA-LIST Vision and Learning Laboratory",
+      "role": "Handwritten UML Diagram Recognition Intern",
+      "logo": "cea.png",
+      "location": "Saclay, France",
+      "start": "2024-06",
+      "end": "2024-10",
+      "tasks": [
+        "Conducted research on the state of the art in handwritten UML recognition models",
+        "Created a labeled dataset of UML handwritten diagrams with 20 participants using Label Studio",
+        "Fine-tuned a Faster R-CNN ResNet50 model with PyTorch to segment the diagrams",
+        "Developed a demonstrator for the team"
+      ]
+    },
+    {
+      "company": "CEA-LIST Vision and Learning Laboratory",
+      "role": "Full-Stack AI Intern",
+      "logo": "cea.png",
+      "location": "Saclay, France",
+      "start": "2023-06",
+      "end": "2023-08",
+      "tasks": [
+        "Participated to a web application for AI-assisted annotation dataset",
+        "Contributed to the back-end infrastructure and unit testing",
+        "Developed API endpoints with FastAPI",
+        "Gained introduction to PyTorch for AI"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "CycloEval",
+      "role": "Academic Project",
+      "start": "2024-10",
+      "end": "2025-01",
+      "tasks": [
+        "Developed a tool to detect shocks on bike paths using accelerometer, orientation, and GPS data",
+        "Filtering sensor data with a low pass filter",
+        "Implemented a FastAPI backend for data processing and SQLite storage",
+        "Built a React + Leaflet interface to visualize routes and risky areas"
+      ]
+    },
+    {
+      "name": "Smart Intersections",
+      "role": "Academic Project",
+      "start": "2024-11",
+      "end": "2024-12",
+      "tasks": [
+        "Designed a basic Android app to improve intersection safety in Bordeaux",
+        "Integrated OpenData Bordeaux Métropole to provide traffic and signal information"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "INP Bordeaux ENSEIRB-MATMECA Graduate School of Engineering",
+      "degree": "Software Engineering Degree",
+      "start": "2023",
+      "end": "2025"
+    },
+    {
+      "school": "Corot High School",
+      "degree": "Preparatory Classes in Mathematics and Physics",
+      "start": "2020",
+      "end": "2022"
+    }
+  ],
+  "languages": [
+    {
+      "name": "French",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "B2"
+    }
+  ],
+  "interests": [
+    "Basketball",
+    "Running",
+    "Gaming",
+    "Computer hardware",
+    "Surfing"
+  ]
+}
