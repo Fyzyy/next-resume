@@ -12,7 +12,7 @@ import {
   ProjectsSection,
   LanguagesSection,
   InterestsSection,
-} from "./sections";
+} from "./resume";
 
 interface ResumeProps {
   data: resumeType;

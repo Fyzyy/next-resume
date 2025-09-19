@@ -1,5 +1,13 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from "next";
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  turbo: {
+    rules: {
+      '*.css': {
+        loaders: ['css-loader'],
+      },
+    },
+  },
+};
 
 export default nextConfig;
