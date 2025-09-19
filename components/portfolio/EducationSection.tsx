@@ -1,8 +1,8 @@
 "use client";
 
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {Badge} from "@/components/ui/badge";
-import {Calendar, GraduationCap, School} from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Calendar, GraduationCap, School } from "lucide-react";
 
 interface EducationSectionProps {
   data: any;
@@ -22,7 +22,10 @@ export function EducationSection({ data }: EducationSectionProps) {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-8">
             {data.education.map((edu: any, index: number) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow duration-300"
+              >
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div className="flex items-start gap-4">
@@ -31,14 +34,18 @@ export function EducationSection({ data }: EducationSectionProps) {
                       </div>
 
                       <div>
-                        <h3 className="text-xl font-semibold mb-1">{edu.degree}</h3>
+                        <h3 className="text-xl font-semibold mb-1">
+                          {edu.degree}
+                        </h3>
                         <div className="flex items-center text-muted-foreground mb-2">
                           <School className="w-4 h-4 mr-2" />
                           <span>{edu.school}</span>
                         </div>
                         <div className="flex items-center text-sm text-muted-foreground">
                           <Calendar className="w-4 h-4 mr-2" />
-                          <span>{edu.start} - {edu.end}</span>
+                          <span>
+                            {edu.start} - {edu.end}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -54,12 +61,15 @@ export function EducationSection({ data }: EducationSectionProps) {
                   {edu.degree.includes("Software Engineering") && (
                     <div className="space-y-3">
                       <p className="text-muted-foreground">
-                        Engineering program specialized in software engineering, covering full-stack development,
-                        software architecture, and agile methodologies.
+                        Engineering program specialized in software engineering,
+                        covering full-stack development, software architecture,
+                        and agile methodologies.
                       </p>
                       <div className="flex flex-wrap gap-2">
                         <Badge variant="secondary">Web Development</Badge>
-                        <Badge variant="secondary">Artificial Intelligence</Badge>
+                        <Badge variant="secondary">
+                          Artificial Intelligence
+                        </Badge>
                         <Badge variant="secondary">Project Management</Badge>
                         <Badge variant="secondary">Software Architecture</Badge>
                       </div>
@@ -69,8 +79,9 @@ export function EducationSection({ data }: EducationSectionProps) {
                   {edu.degree.includes("Mathematics and Physics") && (
                     <div className="space-y-3">
                       <p className="text-muted-foreground">
-                        Preparatory classes for engineering schools, intensive training in
-                        mathematics and physics preparing for entrance exams.
+                        Preparatory classes for engineering schools, intensive
+                        training in mathematics and physics preparing for
+                        entrance exams.
                       </p>
                       <div className="flex flex-wrap gap-2">
                         <Badge variant="secondary">Mathematics</Badge>

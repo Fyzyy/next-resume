@@ -1,7 +1,7 @@
 "use client";
 
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {Building2, Calendar, MapPin} from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Building2, Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
 
 interface ExperienceSectionProps {
@@ -13,8 +13,18 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
     if (dateStr.includes("-")) {
       const [year, month] = dateStr.split("-");
       const monthNames = [
-        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
       ];
       return `${monthNames[parseInt(month) - 1]} ${year}`;
     }
@@ -58,23 +68,36 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
                                 suppressHydrationWarning
                               />
                             ) : (
-                              <Building2 className="w-6 h-6 text-muted-foreground" suppressHydrationWarning />
+                              <Building2
+                                className="w-6 h-6 text-muted-foreground"
+                                suppressHydrationWarning
+                              />
                             )}
                           </div>
 
                           <div>
-                            <h3 className="text-xl font-semibold">{exp.role}</h3>
-                            <p className="text-lg text-primary font-medium">{exp.company}</p>
+                            <h3 className="text-xl font-semibold">
+                              {exp.role}
+                            </h3>
+                            <p className="text-lg text-primary font-medium">
+                              {exp.company}
+                            </p>
                           </div>
                         </div>
 
                         <div className="flex flex-col sm:items-end gap-2">
                           <div className="flex items-center text-sm text-muted-foreground">
-                            <Calendar className="w-4 h-4 mr-2" suppressHydrationWarning />
+                            <Calendar
+                              className="w-4 h-4 mr-2"
+                              suppressHydrationWarning
+                            />
                             {formatDate(exp.start)} - {formatDate(exp.end)}
                           </div>
                           <div className="flex items-center text-sm text-muted-foreground">
-                            <MapPin className="w-4 h-4 mr-2" suppressHydrationWarning />
+                            <MapPin
+                              className="w-4 h-4 mr-2"
+                              suppressHydrationWarning
+                            />
                             {exp.location}
                           </div>
                         </div>
@@ -86,7 +109,9 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
                         {exp.tasks.map((task: string, taskIndex: number) => (
                           <li key={taskIndex} className="flex items-start">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 shrink-0" />
-                            <span className="text-muted-foreground leading-relaxed">{task}</span>
+                            <span className="text-muted-foreground leading-relaxed">
+                              {task}
+                            </span>
                           </li>
                         ))}
                       </ul>

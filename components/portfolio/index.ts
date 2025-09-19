@@ -9,4 +9,3 @@ export { ContactSection } from "./ContactSection";
 export { ScrollToTop } from "./ScrollToTop";
 export { Footer } from "./Footer";
 export { ThemeToggle } from "./ThemeToggle";
-

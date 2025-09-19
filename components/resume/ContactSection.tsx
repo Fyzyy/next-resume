@@ -1,6 +1,6 @@
-import { Text, View, StyleSheet, Svg, Path } from "@react-pdf/renderer";
-import { Profile } from "@/types/resumeType";
-import { theme } from "@/styles/theme";
+import {Link, Path, StyleSheet, Svg, Text, View} from "@react-pdf/renderer";
+import {Profile} from "@/types/resumeType";
+import {theme} from "@/styles/theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
@@ -107,12 +107,12 @@ export function ContactSection({ profile }: ContactSectionProps) {
 
       <View style={styles.contactItem}>
         <EmailIcon />
-        <Text
+        <Link
           style={[styles.contactText, styles.link]}
           src={`mailto:${profile.email}`}
         >
           {profile.email}
-        </Text>
+        </Link>
       </View>
 
       {profile.phone && (
@@ -130,21 +130,21 @@ export function ContactSection({ profile }: ContactSectionProps) {
       {profile.linkedin && (
         <View style={styles.contactItem}>
           <LinkedInIcon />
-          <Text
+          <Link
             style={[styles.contactText, styles.link]}
             src={profile.linkedin}
           >
             LinkedIn Profile
-          </Text>
+          </Link>
         </View>
       )}
 
       {profile.github && (
         <View style={styles.contactItem}>
           <GitHubIcon />
-          <Text style={[styles.contactText, styles.link]} src={profile.github}>
+          <Link style={[styles.contactText, styles.link]} src={profile.github}>
             GitHub Profile
-          </Text>
+          </Link>
         </View>
       )}
     </View>

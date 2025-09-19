@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Document, Page, View, StyleSheet } from "@react-pdf/renderer";
 import { resumeType } from "@/types/resumeType";

@@ -1,10 +1,10 @@
 "use client";
 
-import {useState} from "react";
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {Button} from "@/components/ui/button";
-import {Badge} from "@/components/ui/badge";
-import {Calendar, ExternalLink, Github} from "lucide-react";
+import { useState } from "react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Calendar, ExternalLink, Github } from "lucide-react";
 
 interface ProjectsSectionProps {
   data: any;
@@ -17,8 +17,18 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
     if (dateStr.includes("-")) {
       const [year, month] = dateStr.split("-");
       const monthNames = [
-        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
       ];
       return `${monthNames[parseInt(month) - 1]} ${year}`;
     }
@@ -50,7 +60,9 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
             <Card
               key={index}
               className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer flex flex-col h-full"
-              onClick={() => setSelectedProject(selectedProject === index ? null : index)}
+              onClick={() =>
+                setSelectedProject(selectedProject === index ? null : index)
+              }
             >
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
@@ -78,11 +90,15 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
               <CardContent className="flex-1 flex flex-col">
                 <div className="space-y-4 flex-1">
                   {/* Description du projet */}
-                  <div className={`space-y-3 ${selectedProject === index ? 'block' : 'line-clamp-3'}`}>
+                  <div
+                    className={`space-y-3 ${selectedProject === index ? "block" : "line-clamp-3"}`}
+                  >
                     {project.tasks.map((task: string, taskIndex: number) => (
                       <div key={taskIndex} className="flex items-start">
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 shrink-0" />
-                        <span className="text-sm text-muted-foreground leading-relaxed">{task}</span>
+                        <span className="text-sm text-muted-foreground leading-relaxed">
+                          {task}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -92,11 +108,17 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
                 <div className="space-y-3 mt-6">
                   <h4 className="font-medium text-sm">Technologies Used</h4>
                   <div className="flex flex-wrap gap-2">
-                    {getProjectTechnologies(project.name).map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
+                    {getProjectTechnologies(project.name).map(
+                      (tech, techIndex) => (
+                        <Badge
+                          key={techIndex}
+                          variant="outline"
+                          className="text-xs"
+                        >
+                          {tech}
+                        </Badge>
+                      ),
+                    )}
                   </div>
                 </div>
 

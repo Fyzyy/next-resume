@@ -1,15 +1,15 @@
 "use client";
 
-import {useEffect, useState} from "react";
-import {Button} from "@/components/ui/button";
-import {FileText, Menu, Moon, Sun, X} from "lucide-react";
-import {useTheme} from "next-themes";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { FileText, Menu, Moon, Sun, X } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const {theme, setTheme} = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -38,15 +38,17 @@ export function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent"
-    }`}>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md border-b"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="font-bold text-xl">
-            <button onClick={() => scrollToSection("hero")}>
-              MV
-            </button>
+            <button onClick={() => scrollToSection("hero")}>MV</button>
           </div>
 
           {/* Desktop Navigation */}
@@ -129,7 +131,10 @@ export function Navbar() {
                 className="block w-full text-left px-3 py-2 text-foreground/80 hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                <FileText className="w-4 h-4 mr-2 inline" suppressHydrationWarning />
+                <FileText
+                  className="w-4 h-4 mr-2 inline"
+                  suppressHydrationWarning
+                />
                 Resume
               </a>
             </div>

@@ -1,5 +1,5 @@
-import {StyleSheet, Text, View} from "@react-pdf/renderer";
-import {theme} from "@/styles/theme";
+import { StyleSheet, Text, View } from "@react-pdf/renderer";
+import { theme } from "@/styles/theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {

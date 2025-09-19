@@ -154,7 +154,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -198,5 +199,5 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary)/80%);
+  background: hsl(var(--primary) / 80%);
 }

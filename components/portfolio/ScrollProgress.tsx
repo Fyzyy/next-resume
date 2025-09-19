@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 export function ScrollProgress() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -9,7 +9,9 @@ export function ScrollProgress() {
   useEffect(() => {
     const updateScrollProgress = () => {
       const scrollPx = document.documentElement.scrollTop;
-      const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const winHeightPx =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
       const scrolled = (scrollPx / winHeightPx) * 100;
 
       setScrollProgress(scrolled);

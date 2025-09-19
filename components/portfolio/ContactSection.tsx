@@ -1,7 +1,7 @@
 "use client";
 
-import {Card, CardContent} from "@/components/ui/card";
-import {Github, Linkedin, Mail, MapPin, Phone} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 interface ContactSectionProps {
   data: any;
@@ -14,7 +14,8 @@ export function ContactSection({ data }: ContactSectionProps) {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to collaborate? Feel free to reach out to discuss your projects
+            Ready to collaborate? Feel free to reach out to discuss your
+            projects
           </p>
         </div>
 

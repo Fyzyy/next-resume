@@ -1,9 +1,16 @@
 "use client";
 
-import {Button} from "@/components/ui/button";
-import {Badge} from "@/components/ui/badge";
-import {ArrowDown, Download, Github, Linkedin, Mail, MapPin} from "lucide-react";
-import {useEffect, useState} from "react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  ArrowDown,
+  Download,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface HeroSectionProps {
   data: any;
@@ -32,7 +39,7 @@ export function HeroSection({ data }: HeroSectionProps) {
   const maxScroll = 400; // Distance de scroll maximum pour l'animation
   const scrollProgress = Math.min(scrollY / maxScroll, 1);
   const translateY = scrollProgress * 80; // Translation vers le haut plus prononcée
-  const opacity = 1 - (scrollProgress * 0.3); // Réduction d'opacité
+  const opacity = 1 - scrollProgress * 0.3; // Réduction d'opacité
 
   return (
     <section
@@ -40,7 +47,7 @@ export function HeroSection({ data }: HeroSectionProps) {
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
       style={{
         transform: `translateY(-${translateY}px)`,
-        opacity: opacity
+        opacity: opacity,
       }}
     >
       {/* Background gradient */}
@@ -53,7 +60,10 @@ export function HeroSection({ data }: HeroSectionProps) {
         <div className="text-center space-y-8 animate-fade-in">
           {/* Avatar placeholder */}
           <div className="w-32 h-32 mx-auto bg-gradient-to-br from-primary to-primary/60 rounded-full flex items-center justify-center text-4xl font-bold text-primary-foreground">
-            {data.profile.name.split(' ').map((n: string) => n[0]).join('')}
+            {data.profile.name
+              .split(" ")
+              .map((n: string) => n[0])
+              .join("")}
           </div>
 
           {/* Name and Title */}
@@ -82,7 +92,9 @@ export function HeroSection({ data }: HeroSectionProps) {
             {Array.from({ length: 6 }, (_, i) => {
               const isEven = i % 2 === 0;
               const skillIndex = Math.floor(i / 2);
-              const skill = isEven ? data.skills.Frontend[skillIndex] : data.skills.Backend[skillIndex];
+              const skill = isEven
+                ? data.skills.Frontend[skillIndex]
+                : data.skills.Backend[skillIndex];
               return skill ? (
                 <Badge key={i} variant="secondary" className="text-sm">
                   {skill}
@@ -93,11 +105,24 @@ export function HeroSection({ data }: HeroSectionProps) {
 
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="min-w-[150px]" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+            <Button
+              size="lg"
+              className="min-w-[150px]"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               <Mail className="w-4 h-4 mr-2" />
               Contact Me
             </Button>
-            <Button variant="outline" size="lg" className="min-w-[150px]" asChild>
+            <Button
+              variant="outline"
+              size="lg"
+              className="min-w-[150px]"
+              asChild
+            >
               <a href="/resume">
                 <Download className="w-4 h-4 mr-2" />
                 View My Resume
@@ -134,7 +159,9 @@ export function HeroSection({ data }: HeroSectionProps) {
 
         {/* Enhanced scroll indicator - Repositionné en dehors de l'animation */}
         <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 z-20">
-          <span className="text-sm text-muted-foreground font-medium">Scroll to explore</span>
+          <span className="text-sm text-muted-foreground font-medium">
+            Scroll to explore
+          </span>
           <button
             onClick={scrollToSkills}
             className="animate-bounce text-muted-foreground hover:text-foreground transition-colors p-3 rounded-full border border-muted-foreground/20 hover:border-foreground/40 bg-background/80 backdrop-blur-sm"

@@ -49,7 +49,7 @@ export type resumeType = {
   skills: Skills;
   experience: Experience[];
   education: Education[];
-  projects?: Project[];  // Ajout du champ projects
+  projects?: Project[]; // Ajout du champ projects
   languages?: Language[];
   interests?: string[];
 };

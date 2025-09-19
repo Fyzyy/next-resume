@@ -8,11 +8,23 @@
     "linkedin": "https://www.linkedin.com/in/maximilien-vidiani-481692244/",
     "github": "https://github.com/Fyzyy",
     "summary": "Seeking a full-time position as a software engineer, leveraging experience in full-stack development, API design, and software quality assurance. Motivated to work in agile teams on impactful projects involving web technologies, or AI systems."
-
   },
   "skills": {
-    "Frontend": ["Angular 19+", "TypeScript", "Next.js", "HTML/CSS", "Tailwind"],
-    "Backend": ["Spring Boot", "Java", "PostgreSQL", "OpenAPI", "Python", "SQL"],
+    "Frontend": [
+      "Angular 19+",
+      "TypeScript",
+      "Next.js",
+      "HTML/CSS",
+      "Tailwind"
+    ],
+    "Backend": [
+      "Spring Boot",
+      "Java",
+      "PostgreSQL",
+      "OpenAPI",
+      "Python",
+      "SQL"
+    ],
     "DevOps": ["GitHub", "Azure DevOps", "Docker", "Kubernetes"],
     "Tools": ["IntelliJ", "LLM", "Jira"]
   },

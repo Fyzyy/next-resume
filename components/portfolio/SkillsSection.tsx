@@ -1,9 +1,9 @@
 "use client";
 
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {Badge} from "@/components/ui/badge";
-import {Database, Palette, Settings, Wrench} from "lucide-react";
-import {resumeType} from "@/types/resumeType";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Database, Palette, Settings, Wrench } from "lucide-react";
+import { resumeType } from "@/types/resumeType";
 
 interface SkillsSectionProps {
   data: resumeType;
@@ -11,10 +11,18 @@ interface SkillsSectionProps {
 
 export function SkillsSection({ data }: SkillsSectionProps) {
   const iconMapping = {
-    "Frontend": { icon: Palette, color: "text-blue-600", bgColor: "bg-blue-50" },
-    "Backend": { icon: Database, color: "text-green-600", bgColor: "bg-green-50" },
-    "DevOps": { icon: Settings, color: "text-purple-600", bgColor: "bg-purple-50" },
-    "Tools": { icon: Wrench, color: "text-orange-600", bgColor: "bg-orange-50" }
+    Frontend: { icon: Palette, color: "text-blue-600", bgColor: "bg-blue-50" },
+    Backend: {
+      icon: Database,
+      color: "text-green-600",
+      bgColor: "bg-green-50",
+    },
+    DevOps: {
+      icon: Settings,
+      color: "text-purple-600",
+      bgColor: "bg-purple-50",
+    },
+    Tools: { icon: Wrench, color: "text-orange-600", bgColor: "bg-orange-50" },
   };
 
   return (
@@ -29,15 +37,23 @@ export function SkillsSection({ data }: SkillsSectionProps) {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {Object.entries(data.skills).map(([category, skills], index) => {
-            const categoryConfig = iconMapping[category as keyof typeof iconMapping];
+            const categoryConfig =
+              iconMapping[category as keyof typeof iconMapping];
             if (!categoryConfig) return null;
 
             const IconComponent = categoryConfig.icon;
             return (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 shadow-md">
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 shadow-md"
+              >
                 <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 mx-auto rounded-full ${categoryConfig.bgColor} flex items-center justify-center mb-4`}>
-                    <IconComponent className={`w-8 h-8 ${categoryConfig.color}`} />
+                  <div
+                    className={`w-16 h-16 mx-auto rounded-full ${categoryConfig.bgColor} flex items-center justify-center mb-4`}
+                  >
+                    <IconComponent
+                      className={`w-8 h-8 ${categoryConfig.color}`}
+                    />
                   </div>
                   <h3 className="text-lg font-semibold">{category}</h3>
                 </CardHeader>

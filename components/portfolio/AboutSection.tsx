@@ -1,7 +1,7 @@
 "use client";
 
-import {Card, CardContent} from "@/components/ui/card";
-import {User} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { User } from "lucide-react";
 
 interface AboutSectionProps {
   data: any;
@@ -27,7 +27,9 @@ export function AboutSection({ data }: AboutSectionProps) {
                 </div>
               </div>
               <div className="text-center">
-                <h3 className="text-2xl font-semibold mb-6">Software Engineer - Fullstack</h3>
+                <h3 className="text-2xl font-semibold mb-6">
+                  Software Engineer - Fullstack
+                </h3>
                 <p className="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto">
                   {data.profile.summary}
                 </p>

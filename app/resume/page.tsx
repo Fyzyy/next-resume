@@ -4,25 +4,25 @@ import {resumeType} from "@/types/resumeType";
 import resumeData from "@/data/maximilien.json";
 import Resume from "@/components/Resume";
 import {Button} from "@/components/ui/button";
-import {ArrowLeft, ChevronLeft, ChevronRight, Download, Moon, Sun} from "lucide-react";
+import {ArrowLeft, ChevronLeft, ChevronRight, Download, Moon, Sun,} from "lucide-react";
 import {useEffect, useState} from "react";
 import {useTheme} from "next-themes";
 import {pdf} from "@react-pdf/renderer";
 import dynamic from "next/dynamic";
 
 // Import des styles CSS nécessaires pour react-pdf
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
 
 // Dynamic import pour éviter les erreurs SSR
 const PDFDocument = dynamic(
-  () => import('react-pdf').then(mod => ({ default: mod.Document })),
-  { ssr: false }
+  () => import("react-pdf").then((mod) => ({ default: mod.Document })),
+  { ssr: false },
 );
 
 const PDFPage = dynamic(
-  () => import('react-pdf').then(mod => ({ default: mod.Page })),
-  { ssr: false }
+  () => import("react-pdf").then((mod) => ({ default: mod.Page })),
+  { ssr: false },
 );
 
 export default function ResumePage() {
@@ -31,9 +31,8 @@ export default function ResumePage() {
   const [pdfUrl, setPdfUrl] = useState<string>("");
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1);
-  const [loading, setLoading] = useState(true);
   const [pdfJsLoaded, setPdfJsLoaded] = useState(false);
-  const {theme, setTheme} = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setIsClient(true);
@@ -41,7 +40,7 @@ export default function ResumePage() {
     // Configuration du worker PDF.js avec la version correspondante
     const setupPdfJs = async () => {
       try {
-        const { pdfjs } = await import('react-pdf');
+        const { pdfjs } = await import("react-pdf");
 
         // Utiliser la même version que l'API (5.3.93) pour éviter le conflit
         pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
@@ -51,7 +50,7 @@ export default function ResumePage() {
         console.error("Error setting up PDF.js:", error);
         // Fallback avec une version compatible
         try {
-          const { pdfjs } = await import('react-pdf');
+          const { pdfjs } = await import("react-pdf");
           pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
           setPdfJsLoaded(true);
         } catch (fallbackError) {
@@ -110,11 +109,11 @@ export default function ResumePage() {
   };
 
   const goToPrevPage = () => {
-    setPageNumber(prev => Math.max(prev - 1, 1));
+    setPageNumber((prev) => Math.max(prev - 1, 1));
   };
 
   const goToNextPage = () => {
-    setPageNumber(prev => Math.min(prev + 1, numPages));
+    setPageNumber((prev) => Math.min(prev + 1, numPages));
   };
 
   return (
@@ -129,7 +128,9 @@ export default function ResumePage() {
                 Back to Portfolio
               </a>
             </Button>
-            <h1 className="text-xl font-semibold">Resume - {data.profile.name}</h1>
+            <h1 className="text-xl font-semibold">
+              Resume - {data.profile.name}
+            </h1>
             <div className="flex items-center space-x-2">
               {isClient && (
                 <Button
@@ -194,18 +195,26 @@ export default function ResumePage() {
                   onLoadSuccess={onDocumentLoadSuccess}
                   loading={
                     <div className="flex justify-center items-center h-[800px] bg-white">
-                      <div className="text-lg text-gray-600">Loading PDF...</div>
+                      <div className="text-lg text-gray-600">
+                        Loading PDF...
+                      </div>
                     </div>
                   }
                   error={
                     <div className="flex justify-center items-center h-[400px] bg-white">
-                      <div className="text-lg text-red-500">Failed to load PDF</div>
+                      <div className="text-lg text-red-500">
+                        Failed to load PDF
+                      </div>
                     </div>
                   }
                 >
                   <PDFPage
                     pageNumber={pageNumber}
-                    width={typeof window !== 'undefined' ? Math.min(794, window.innerWidth - 150) : 794}
+                    width={
+                      typeof window !== "undefined"
+                        ? Math.min(794, window.innerWidth - 150)
+                        : 794
+                    }
                     renderTextLayer={false}
                     renderAnnotationLayer={false}
                   />
@@ -214,7 +223,9 @@ export default function ResumePage() {
             ) : (
               <div className="flex justify-center items-center h-[800px] bg-white rounded-lg shadow-xl border border-gray-200">
                 <div className="text-lg text-gray-600">
-                  {!pdfJsLoaded ? "Setting up PDF viewer..." : "Generating PDF..."}
+                  {!pdfJsLoaded
+                    ? "Setting up PDF viewer..."
+                    : "Generating PDF..."}
                 </div>
               </div>
             )}

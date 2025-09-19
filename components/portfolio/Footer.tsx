@@ -1,7 +1,7 @@
 "use client";
 
-import {Separator} from "@/components/ui/separator";
-import {Github, Heart, Linkedin, Mail} from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import { Github, Heart, Linkedin, Mail } from "lucide-react";
 
 interface FooterProps {
   data: any;
@@ -17,9 +17,7 @@ export function Footer({ data }: FooterProps) {
           {/* Personal Information */}
           <div>
             <h3 className="text-lg font-semibold mb-4">{data.profile.name}</h3>
-            <p className="text-muted-foreground mb-4">
-              {data.profile.title}
-            </p>
+            <p className="text-muted-foreground mb-4">{data.profile.title}</p>
             <p className="text-sm text-muted-foreground">
               {data.profile.location.join(" • ")}
             </p>
@@ -33,11 +31,15 @@ export function Footer({ data }: FooterProps) {
                 { label: "Experience", id: "experience" },
                 { label: "Projects", id: "projects" },
                 { label: "Skills", id: "skills" },
-                { label: "Contact", id: "contact" }
+                { label: "Contact", id: "contact" },
               ].map((item) => (
                 <li key={item.id}>
                   <button
-                    onClick={() => document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() =>
+                      document
+                        .getElementById(item.id)
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                     className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                   >
                     {item.label}
@@ -88,7 +90,8 @@ export function Footer({ data }: FooterProps) {
             © {currentYear} {data.profile.name}. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center mt-2 sm:mt-0">
-            Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> and Next.js
+            Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> and
+            Next.js
           </p>
         </div>
       </div>
