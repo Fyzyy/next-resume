@@ -3,42 +3,19 @@
 import {Card, CardContent, CardHeader} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
 import {Database, Palette, Settings, Wrench} from "lucide-react";
+import {resumeType} from "@/types/resumeType";
 
 interface SkillsSectionProps {
-  data: any;
+  data: resumeType;
 }
 
 export function SkillsSection({ data }: SkillsSectionProps) {
-  const skillCategories = [
-    {
-      title: "Frontend",
-      icon: Palette,
-      skills: ["Angular 19+", "Next.js", "TypeScript", "HTML/CSS", "Tailwind"],
-      color: "text-blue-600",
-      bgColor: "bg-blue-50"
-    },
-    {
-      title: "Backend",
-      icon: Database,
-      skills: ["Spring Boot", "Java", "PostgreSQL", "OpenAPI", "Python", "SQL"],
-      color: "text-green-600",
-      bgColor: "bg-green-50"
-    },
-    {
-      title: "DevOps",
-      icon: Settings,
-      skills: ["GitHub", "Azure DevOps", "Docker", "Kubernetes"],
-      color: "text-purple-600",
-      bgColor: "bg-purple-50"
-    },
-    {
-      title: "Tools",
-      icon: Wrench,
-      skills: ["IntelliJ", "LLM", "Jira"],
-      color: "text-orange-600",
-      bgColor: "bg-orange-50"
-    }
-  ];
+  const iconMapping = {
+    "Frontend": { icon: Palette, color: "text-blue-600", bgColor: "bg-blue-50" },
+    "Backend": { icon: Database, color: "text-green-600", bgColor: "bg-green-50" },
+    "DevOps": { icon: Settings, color: "text-purple-600", bgColor: "bg-purple-50" },
+    "Tools": { icon: Wrench, color: "text-orange-600", bgColor: "bg-orange-50" }
+  };
 
   return (
     <section id="skills" className="py-16">
@@ -51,20 +28,23 @@ export function SkillsSection({ data }: SkillsSectionProps) {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {skillCategories.map((category, index) => {
-            const IconComponent = category.icon;
+          {Object.entries(data.skills).map(([category, skills], index) => {
+            const categoryConfig = iconMapping[category as keyof typeof iconMapping];
+            if (!categoryConfig) return null;
+
+            const IconComponent = categoryConfig.icon;
             return (
               <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 shadow-md">
                 <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 mx-auto rounded-full ${category.bgColor} flex items-center justify-center mb-4`}>
-                    <IconComponent className={`w-8 h-8 ${category.color}`} />
+                  <div className={`w-16 h-16 mx-auto rounded-full ${categoryConfig.bgColor} flex items-center justify-center mb-4`}>
+                    <IconComponent className={`w-8 h-8 ${categoryConfig.color}`} />
                   </div>
-                  <h3 className="text-lg font-semibold">{category.title}</h3>
+                  <h3 className="text-lg font-semibold">{category}</h3>
                 </CardHeader>
 
                 <CardContent>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    {category.skills.map((skill: string, skillIndex: number) => (
+                    {skills.map((skill: string, skillIndex: number) => (
                       <Badge
                         key={skillIndex}
                         variant="secondary"

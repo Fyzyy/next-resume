@@ -1,5 +1,5 @@
-import { Text, View, StyleSheet } from "@react-pdf/renderer";
-import { theme } from "@/styles/theme";
+import {StyleSheet, Text, View} from "@react-pdf/renderer";
+import {theme} from "@/styles/theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
@@ -19,14 +19,16 @@ const styles = StyleSheet.create({
   },
   interest: {
     fontSize: theme.fontSize.xs,
-    color: theme.colors.primary,
+    color: theme.colors.secondary,
     backgroundColor: theme.colors.muted_background,
-    padding: theme.spacing.xs,
-    borderRadius: theme.borderRadius.sm,
+    paddingHorizontal: theme.spacing.md,
+    paddingVertical: theme.spacing.xs,
+    borderRadius: theme.borderRadius.md,
     border: `${theme.borderWidth.thin}px solid ${theme.colors.border}`,
     marginRight: theme.spacing.xs,
     marginBottom: theme.spacing.xs,
     fontFamily: theme.fonts.primary,
+    fontWeight: "500",
   },
 });
 

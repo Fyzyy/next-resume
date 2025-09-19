@@ -79,11 +79,16 @@ export function HeroSection({ data }: HeroSectionProps) {
 
           {/* Tech stack preview */}
           <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
-            {data.skills["Professional Stack"].slice(0, 6).map((skill: string, index: number) => (
-              <Badge key={index} variant="secondary" className="text-sm">
-                {skill}
-              </Badge>
-            ))}
+            {Array.from({ length: 6 }, (_, i) => {
+              const isEven = i % 2 === 0;
+              const skillIndex = Math.floor(i / 2);
+              const skill = isEven ? data.skills.Frontend[skillIndex] : data.skills.Backend[skillIndex];
+              return skill ? (
+                <Badge key={i} variant="secondary" className="text-sm">
+                  {skill}
+                </Badge>
+              ) : null;
+            }).filter(Boolean)}
           </div>
 
           {/* Action buttons */}

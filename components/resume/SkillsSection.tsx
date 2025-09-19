@@ -1,6 +1,6 @@
-import { Text, View, StyleSheet } from "@react-pdf/renderer";
-import { Skills } from "@/types/resumeType";
-import { theme } from "@/styles/theme";
+import {StyleSheet, Text, View} from "@react-pdf/renderer";
+import {Skills} from "@/types/resumeType";
+import {theme} from "@/styles/theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
@@ -45,22 +45,6 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.primary,
     fontWeight: "500",
   },
-  professionalBadge: {
-    backgroundColor: theme.colors.accent,
-    border: `${theme.borderWidth.thin}px solid ${theme.colors.primary}`,
-  },
-  professionalText: {
-    color: theme.colors.background,
-    fontWeight: "bold",
-  },
-  toolsBadge: {
-    backgroundColor: theme.colors.card,
-    border: `${theme.borderWidth.normal}px solid ${theme.colors.accent}`,
-  },
-  languagesBadge: {
-    backgroundColor: theme.colors.background,
-    border: `${theme.borderWidth.normal}px solid ${theme.colors.muted}`,
-  },
 });
 
 interface SkillsSectionProps {
@@ -68,26 +52,6 @@ interface SkillsSectionProps {
 }
 
 export function SkillsSection({ skills }: SkillsSectionProps) {
-  const getBadgeStyle = (category: string) => {
-    const lowerCategory = category.toLowerCase();
-    if (lowerCategory.includes('professional') || lowerCategory.includes('stack')) {
-      return [styles.skillBadge, styles.professionalBadge];
-    } else if (lowerCategory.includes('tools')) {
-      return [styles.skillBadge, styles.toolsBadge];
-    } else if (lowerCategory.includes('languages')) {
-      return [styles.skillBadge, styles.languagesBadge];
-    }
-    return [styles.skillBadge];
-  };
-
-  const getTextStyle = (category: string) => {
-    const lowerCategory = category.toLowerCase();
-    if (lowerCategory.includes('professional') || lowerCategory.includes('stack')) {
-      return [styles.skillText, styles.professionalText];
-    }
-    return [styles.skillText];
-  };
-
   const renderSkillCategory = (title: string, skillList: string[]) => {
     if (!skillList || skillList.length === 0) return null;
 
@@ -96,8 +60,8 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
         <Text style={styles.categoryTitle}>{title}</Text>
         <View style={styles.skillsGrid}>
           {skillList.map((skill, index) => (
-            <View key={index} style={getBadgeStyle(title)}>
-              <Text style={getTextStyle(title)}>{skill}</Text>
+            <View key={index} style={styles.skillBadge}>
+              <Text style={styles.skillText}>{skill}</Text>
             </View>
           ))}
         </View>
