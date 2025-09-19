@@ -31,6 +31,7 @@ export default function ResumePage() {
   const [pdfUrl, setPdfUrl] = useState<string>("");
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1);
+  const [loading, setLoading] = useState(true);
   const [pdfJsLoaded, setPdfJsLoaded] = useState(false);
   const { theme, setTheme } = useTheme();
 
