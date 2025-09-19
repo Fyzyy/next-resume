@@ -1,0 +1,9 @@
+export { ProfileSection } from "./ProfileSection";
+export { ContactSection } from "./ContactSection";
+export { AboutSection } from "./AboutSection";
+export { SkillsSection } from "./SkillsSection";
+export { EducationSection } from "./EducationSection";
+export { ExperienceSection } from "./ExperienceSection";
+export { ProjectsSection } from "./ProjectsSection";
+export { LanguagesSection } from "./LanguagesSection";
+export { InterestsSection } from "./InterestsSection";
