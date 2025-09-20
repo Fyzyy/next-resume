@@ -1,19 +1,27 @@
 "use client";
 
-import {Briefcase, FileText, FolderOpen, GraduationCap, Home, Mail, Settings,} from "lucide-react";
-import {useEffect, useState} from "react";
-import {Button} from "@/components/ui/button";
 import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
+  Briefcase,
+  FileText,
+  FolderOpen,
+  GraduationCap,
+  Home,
+  Mail,
+  Settings,
+} from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import {cn} from "@/lib/utils";
-import {ThemeToggle} from "./ThemeToggle";
-import {resumeType} from "@/types/resumeType";
+import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
+import { resumeType } from "@/types/resumeType";
 import resumeData from "@/data/maximilien.json";
 
 const iconMap = {
@@ -35,7 +43,10 @@ export function Navbar() {
   const data = resumeData as resumeType;
   const profileName = data.profile.name;
   const profileRole = data.profile.role;
-  const profileInitials = data.profile.name.split(' ').map(n => n[0]).join('');
+  const profileInitials = data.profile.name
+    .split(" ")
+    .map((n) => n[0])
+    .join("");
 
   const navItems = [
     { label: "Home", id: "hero", icon: "Home" },
@@ -50,7 +61,14 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ["hero", "skills", "experience", "projects", "education", "contact"];
+      const sections = [
+        "hero",
+        "skills",
+        "experience",
+        "projects",
+        "education",
+        "contact",
+      ];
       const scrollPos = window.scrollY + 120;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
@@ -110,9 +128,7 @@ export function Navbar() {
                 <h1 className="text-xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent truncate">
                   {profileName}
                 </h1>
-                <p className="text-sm text-muted-foreground">
-                  {profileRole}
-                </p>
+                <p className="text-sm text-muted-foreground">{profileRole}</p>
               </div>
             </div>
           </div>
@@ -134,7 +150,9 @@ export function Navbar() {
                         onClick={() => scrollToSection(item.id)}
                       >
                         <IconComponent className="w-4 h-4" />
-                        <span className="text-xs whitespace-nowrap">{item.label}</span>
+                        <span className="text-xs whitespace-nowrap">
+                          {item.label}
+                        </span>
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   );
@@ -170,7 +188,8 @@ export function Navbar() {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-full">
-                    {navItems.find(item => item.id === activeSection)?.label || "Navigation"}
+                    {navItems.find((item) => item.id === activeSection)
+                      ?.label || "Navigation"}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="min-w-[250px] w-[75vw] max-w-xs p-3 mt-4 bg-popover border rounded-md shadow-lg absolute top-full right-0 z-50">
                     <div className="grid gap-2">
@@ -181,7 +200,8 @@ export function Navbar() {
                         </p>
                       </div>
                       {navItems.map((item) => {
-                        const IconComponent = iconMap[item.icon as IconName] || Home;
+                        const IconComponent =
+                          iconMap[item.icon as IconName] || Home;
                         return (
                           <NavigationMenuLink
                             key={item.id}

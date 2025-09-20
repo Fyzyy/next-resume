@@ -1,7 +1,7 @@
 "use client";
 
-import {Card, CardContent} from "@/components/ui/card";
-import {Github, Linkedin, Mail, MapPin, Phone} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 interface ContactSectionProps {
   data: any;
@@ -14,7 +14,8 @@ export function ContactSection({ data }: ContactSectionProps) {
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Contact Me</h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4 sm:px-0">
-            Ready to collaborate? Feel free to reach out to discuss your projects
+            Ready to collaborate? Feel free to reach out to discuss your
+            projects
           </p>
         </div>
 
@@ -25,7 +26,9 @@ export function ContactSection({ data }: ContactSectionProps) {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h4 className="font-semibold mb-2 text-sm sm:text-base">Email</h4>
+                <h4 className="font-semibold mb-2 text-sm sm:text-base">
+                  Email
+                </h4>
                 <a
                   href={`mailto:${data.profile.email}`}
                   className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors break-all"
@@ -40,7 +43,9 @@ export function ContactSection({ data }: ContactSectionProps) {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h4 className="font-semibold mb-2 text-sm sm:text-base">Phone</h4>
+                <h4 className="font-semibold mb-2 text-sm sm:text-base">
+                  Phone
+                </h4>
                 <a
                   href={`tel:${data.profile.phone}`}
                   className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -55,7 +60,9 @@ export function ContactSection({ data }: ContactSectionProps) {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h4 className="font-semibold mb-2 text-sm sm:text-base">Location</h4>
+                <h4 className="font-semibold mb-2 text-sm sm:text-base">
+                  Location
+                </h4>
                 <p className="text-xs sm:text-sm text-muted-foreground">
                   {data.profile.location.join(" • ")}
                 </p>
@@ -64,7 +71,9 @@ export function ContactSection({ data }: ContactSectionProps) {
           </div>
 
           <div className="text-center mt-8 lg:mt-12">
-            <h4 className="font-semibold mb-4 sm:mb-6 text-sm sm:text-base">Follow Me</h4>
+            <h4 className="font-semibold mb-4 sm:mb-6 text-sm sm:text-base">
+              Follow Me
+            </h4>
             <div className="flex justify-center space-x-4 sm:space-x-6">
               <a
                 href={data.profile.github}

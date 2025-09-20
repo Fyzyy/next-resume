@@ -1,9 +1,16 @@
 "use client";
 
-import {Button} from "@/components/ui/button";
-import {Badge} from "@/components/ui/badge";
-import {ArrowDown, Download, Github, Linkedin, Mail, MapPin,} from "lucide-react";
-import {useEffect, useState} from "react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  ArrowDown,
+  Download,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface HeroSectionProps {
   data: any;
@@ -65,7 +72,9 @@ export function HeroSection({ data }: HeroSectionProps) {
 
           <div className="flex items-center justify-center space-x-2 text-muted-foreground">
             <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-sm sm:text-base">{data.profile.location.join(" • ")}</span>
+            <span className="text-sm sm:text-base">
+              {data.profile.location.join(" • ")}
+            </span>
           </div>
 
           <div className="max-w-2xl lg:max-w-3xl mx-auto">
@@ -82,7 +91,11 @@ export function HeroSection({ data }: HeroSectionProps) {
                 ? data.skills.Frontend[skillIndex]
                 : data.skills.Backend[skillIndex];
               return skill ? (
-                <Badge key={i} variant="secondary" className="text-xs sm:text-sm px-2 py-1">
+                <Badge
+                  key={i}
+                  variant="secondary"
+                  className="text-xs sm:text-sm px-2 py-1"
+                >
                   {skill}
                 </Badge>
               ) : null;

@@ -1,9 +1,9 @@
 "use client";
 
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {Button} from "@/components/ui/button";
-import {Badge} from "@/components/ui/badge";
-import {Calendar, ExternalLink, Github} from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Calendar, ExternalLink, Github } from "lucide-react";
 
 interface ProjectsSectionProps {
   data: any;
@@ -69,13 +69,17 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
                       <h3 className="text-lg sm:text-xl font-bold group-hover:text-primary transition-colors mb-2 leading-tight">
                         {project.name}
                       </h3>
-                      <Badge variant="secondary" className="mb-2 text-xs sm:text-sm">
+                      <Badge
+                        variant="secondary"
+                        className="mb-2 text-xs sm:text-sm"
+                      >
                         {project.role}
                       </Badge>
                       <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
                         <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-2 shrink-0" />
                         <span className="truncate">
-                          {formatDate(project.start)} - {formatDate(project.end)}
+                          {formatDate(project.start)} -{" "}
+                          {formatDate(project.end)}
                         </span>
                       </div>
                     </div>
@@ -98,17 +102,21 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
                 </div>
 
                 <div className="space-y-3 mt-4 sm:mt-6">
-                  <h4 className="font-medium text-xs sm:text-sm">Technologies Used</h4>
+                  <h4 className="font-medium text-xs sm:text-sm">
+                    Technologies Used
+                  </h4>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {getProjectTechnologies(project.name).map((tech, techIndex) => (
-                      <Badge
-                        key={techIndex}
-                        variant="outline"
-                        className="text-xs px-2 py-1"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
+                    {getProjectTechnologies(project.name).map(
+                      (tech, techIndex) => (
+                        <Badge
+                          key={techIndex}
+                          variant="outline"
+                          className="text-xs px-2 py-1"
+                        >
+                          {tech}
+                        </Badge>
+                      ),
+                    )}
                   </div>
                 </div>
 

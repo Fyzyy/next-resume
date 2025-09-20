@@ -1,7 +1,7 @@
 "use client";
 
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {Building2, Calendar, MapPin} from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Building2, Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
 
 interface ExperienceSectionProps {
@@ -86,13 +86,19 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
 
                         <div className="flex flex-col sm:flex-row sm:justify-between gap-2 text-sm text-muted-foreground">
                           <div className="flex items-center">
-                            <Calendar className="w-4 h-4 mr-2 shrink-0" suppressHydrationWarning />
+                            <Calendar
+                              className="w-4 h-4 mr-2 shrink-0"
+                              suppressHydrationWarning
+                            />
                             <span className="truncate">
                               {formatDate(exp.start)} - {formatDate(exp.end)}
                             </span>
                           </div>
                           <div className="flex items-center">
-                            <MapPin className="w-4 h-4 mr-2 shrink-0" suppressHydrationWarning />
+                            <MapPin
+                              className="w-4 h-4 mr-2 shrink-0"
+                              suppressHydrationWarning
+                            />
                             <span className="truncate">{exp.location}</span>
                           </div>
                         </div>

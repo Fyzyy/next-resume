@@ -1,9 +1,9 @@
 "use client";
 
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {Badge} from "@/components/ui/badge";
-import {Database, Palette, Settings, Wrench} from "lucide-react";
-import {resumeType} from "@/types/resumeType";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Database, Palette, Settings, Wrench } from "lucide-react";
+import { resumeType } from "@/types/resumeType";
 
 interface SkillsSectionProps {
   data: resumeType;
@@ -12,8 +12,16 @@ interface SkillsSectionProps {
 export function SkillsSection({ data }: SkillsSectionProps) {
   const iconMapping = {
     Frontend: { icon: Palette, color: "text-blue-600", bgColor: "bg-blue-50" },
-    Backend: { icon: Database, color: "text-green-600", bgColor: "bg-green-50" },
-    DevOps: { icon: Settings, color: "text-purple-600", bgColor: "bg-purple-50" },
+    Backend: {
+      icon: Database,
+      color: "text-green-600",
+      bgColor: "bg-green-50",
+    },
+    DevOps: {
+      icon: Settings,
+      color: "text-purple-600",
+      bgColor: "bg-purple-50",
+    },
     Tools: { icon: Wrench, color: "text-orange-600", bgColor: "bg-orange-50" },
   };
 
@@ -31,7 +39,8 @@ export function SkillsSection({ data }: SkillsSectionProps) {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
           {Object.entries(data.skills).map(([category, skills], index) => {
-            const categoryConfig = iconMapping[category as keyof typeof iconMapping];
+            const categoryConfig =
+              iconMapping[category as keyof typeof iconMapping];
             if (!categoryConfig) return null;
 
             const IconComponent = categoryConfig.icon;

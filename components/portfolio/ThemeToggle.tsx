@@ -1,15 +1,20 @@
 "use client";
 
-import {useEffect, useState} from "react";
-import {Button} from "@/components/ui/button";
-import {Moon, Sun} from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Moon, Sun } from "lucide-react";
 
 export function ThemeToggle({ className = "" }: { className?: string }) {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("resumeTheme") as "light" | "dark" | null;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem("resumeTheme") as
+      | "light"
+      | "dark"
+      | null;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
 
     setTheme(initialTheme);
@@ -29,7 +34,9 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
       size="icon"
       onClick={toggleTheme}
       className={className}
-      title={theme === "light" ? "Passer en mode sombre" : "Passer en mode clair"}
+      title={
+        theme === "light" ? "Passer en mode sombre" : "Passer en mode clair"
+      }
     >
       {theme === "light" ? (
         <Moon className="w-4 h-4" />

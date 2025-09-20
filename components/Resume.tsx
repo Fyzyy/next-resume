@@ -1,17 +1,17 @@
 "use client";
 
-import {Document, Page, StyleSheet, View} from "@react-pdf/renderer";
-import {resumeType} from "@/types/resumeType";
-import {resumeTheme} from "@/styles/resume-theme";
+import { Document, Page, StyleSheet, View } from "@react-pdf/renderer";
+import { resumeType } from "@/types/resumeType";
+import { resumeTheme } from "@/styles/resume-theme";
 import {
-    ContactSection,
-    EducationSection,
-    ExperienceSection,
-    InterestsSection,
-    LanguagesSection,
-    ProfileSection,
-    ProjectsSection,
-    SkillsSection,
+  ContactSection,
+  EducationSection,
+  ExperienceSection,
+  InterestsSection,
+  LanguagesSection,
+  ProfileSection,
+  ProjectsSection,
+  SkillsSection,
 } from "./resume";
 
 interface ResumeProps {

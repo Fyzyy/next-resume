@@ -1,6 +1,6 @@
-import {Link, Path, StyleSheet, Svg, Text, View} from "@react-pdf/renderer";
-import {Profile} from "@/types/resumeType";
-import {resumeTheme} from "@/styles/resume-theme";
+import { Link, Path, StyleSheet, Svg, Text, View } from "@react-pdf/renderer";
+import { Profile } from "@/types/resumeType";
+import { resumeTheme } from "@/styles/resume-theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
@@ -46,7 +46,11 @@ const EmailIcon = () => (
       strokeWidth="2"
       fill="none"
     />
-    <Path d="m22 6-10 7L2 6" stroke={resumeTheme.colors.muted} strokeWidth="2" />
+    <Path
+      d="m22 6-10 7L2 6"
+      stroke={resumeTheme.colors.muted}
+      strokeWidth="2"
+    />
   </Svg>
 );
 

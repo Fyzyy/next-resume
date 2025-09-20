@@ -1,6 +1,6 @@
-import {StyleSheet, Text, View} from "@react-pdf/renderer";
-import {Language} from "@/types/resumeType";
-import {resumeTheme} from "@/styles/resume-theme";
+import { StyleSheet, Text, View } from "@react-pdf/renderer";
+import { Language } from "@/types/resumeType";
+import { resumeTheme } from "@/styles/resume-theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
