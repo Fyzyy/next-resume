@@ -14,13 +14,11 @@ export function ContactSection({ data }: ContactSectionProps) {
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Contact Me</h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4 sm:px-0">
-            Ready to collaborate? Feel free to reach out to discuss your
-            projects
+            Ready to collaborate? Feel free to reach out to discuss your projects
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto">
-          {/* Contact Information */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             <Card className="hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-4 sm:p-6 text-center">
@@ -65,7 +63,6 @@ export function ContactSection({ data }: ContactSectionProps) {
             </Card>
           </div>
 
-          {/* Social Media */}
           <div className="text-center mt-8 lg:mt-12">
             <h4 className="font-semibold mb-4 sm:mb-6 text-sm sm:text-base">Follow Me</h4>
             <div className="flex justify-center space-x-4 sm:space-x-6">

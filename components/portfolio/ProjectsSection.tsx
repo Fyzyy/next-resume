@@ -85,7 +85,6 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
 
               <CardContent className="flex-1 flex flex-col p-4 sm:p-6 pt-0">
                 <div className="space-y-4 flex-1">
-                  {/* Description du projet */}
                   <div className="space-y-2 sm:space-y-3">
                     {project.tasks.map((task: string, taskIndex: number) => (
                       <div key={taskIndex} className="flex items-start">
@@ -98,25 +97,21 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
                   </div>
                 </div>
 
-                {/* Technologies - Always at bottom */}
                 <div className="space-y-3 mt-4 sm:mt-6">
                   <h4 className="font-medium text-xs sm:text-sm">Technologies Used</h4>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {getProjectTechnologies(project.name).map(
-                      (tech, techIndex) => (
-                        <Badge
-                          key={techIndex}
-                          variant="outline"
-                          className="text-xs px-2 py-1"
-                        >
-                          {tech}
-                        </Badge>
-                      ),
-                    )}
+                    {getProjectTechnologies(project.name).map((tech, techIndex) => (
+                      <Badge
+                        key={techIndex}
+                        variant="outline"
+                        className="text-xs px-2 py-1"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
 
-                {/* Actions - Always at bottom */}
                 <div className="flex gap-2 pt-3 sm:pt-4 mt-3 sm:mt-4">
                   {project.srcUrl && (
                     <Button

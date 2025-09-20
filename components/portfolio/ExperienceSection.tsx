@@ -45,20 +45,17 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
 
         <div className="max-w-5xl mx-auto">
           <div className="relative">
-            {/* Timeline line */}
             <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
 
             <div className="space-y-6 lg:space-y-8">
               {data.experience.map((exp: any, index: number) => (
                 <div key={index} className="relative">
-                  {/* Timeline dot */}
                   <div className="absolute left-4 sm:left-6 w-4 h-4 bg-primary rounded-full border-4 border-background hidden md:block" />
 
                   <Card className="md:ml-12 lg:ml-16 hover:shadow-lg transition-shadow duration-300">
                     <CardHeader className="pb-4 p-4 sm:p-6">
                       <div className="flex flex-col gap-4">
                         <div className="flex items-start gap-3 sm:gap-4">
-                          {/* Company logo */}
                           <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-muted flex items-center justify-center shrink-0">
                             {exp.logo ? (
                               <Image
@@ -89,19 +86,13 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
 
                         <div className="flex flex-col sm:flex-row sm:justify-between gap-2 text-sm text-muted-foreground">
                           <div className="flex items-center">
-                            <Calendar
-                              className="w-4 h-4 mr-2 shrink-0"
-                              suppressHydrationWarning
-                            />
+                            <Calendar className="w-4 h-4 mr-2 shrink-0" suppressHydrationWarning />
                             <span className="truncate">
                               {formatDate(exp.start)} - {formatDate(exp.end)}
                             </span>
                           </div>
                           <div className="flex items-center">
-                            <MapPin
-                              className="w-4 h-4 mr-2 shrink-0"
-                              suppressHydrationWarning
-                            />
+                            <MapPin className="w-4 h-4 mr-2 shrink-0" suppressHydrationWarning />
                             <span className="truncate">{exp.location}</span>
                           </div>
                         </div>
