@@ -200,8 +200,8 @@ export function Navbar() {
                     <NavigationMenuTrigger className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-full">
                       Menu
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="w-screen p-4 left-0 right-0 mx-0">
-                      <div className="grid gap-2 max-w-md mx-auto">
+                    <NavigationMenuContent className="w-[calc(100vw-2rem)] max-w-sm p-4 -translate-x-1/2 left-1/2">
+                      <div className="grid gap-2">
                         <div className="pb-2 mb-2 border-b">
                           <p className="text-sm font-medium">Navigate to</p>
                           <p className="text-xs text-muted-foreground">
