@@ -2,6 +2,7 @@
   "profile": {
     "name": "Maximilien Vidiani",
     "title": "Software Engineer - Fullstack",
+    "role": "Software Engineer",
     "location": ["Bordeaux", "Paris", "Luxembourg"],
     "email": "maximilien.vidiani@gmail.com",
     "phone": "+33 6 95 84 66 81",
@@ -84,7 +85,9 @@
         "Filtering sensor data with a low pass filter",
         "Implemented a FastAPI backend for data processing and SQLite storage",
         "Built a React + Leaflet interface to visualize routes and risky areas"
-      ]
+      ],
+      "srcUrl": "https://github.com/Fyzyy/CycloEval",
+      "demoUrl": "https://cycloeval-demo.vercel.app"
     },
     {
       "name": "Smart Intersections",
@@ -94,7 +97,8 @@
       "tasks": [
         "Designed a basic Android app to improve intersection safety in Bordeaux",
         "Integrated OpenData Bordeaux Métropole to provide traffic and signal information"
-      ]
+      ],
+      "srcUrl": "https://github.com/Fyzyy/smart-intersections"
     }
   ],
   "education": [

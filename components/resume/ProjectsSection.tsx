@@ -1,59 +1,59 @@
-import { Text, View, StyleSheet } from "@react-pdf/renderer";
-import { Project } from "@/types/resumeType";
-import { theme } from "@/styles/theme";
+import {StyleSheet, Text, View} from "@react-pdf/renderer";
+import {Project} from "@/types/resumeType";
+import {resumeTheme} from "@/styles/resume-theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
-    fontSize: theme.fontSize.xl,
+    fontSize: resumeTheme.fontSize.xl,
     fontWeight: "bold",
-    color: theme.colors.heading,
-    marginBottom: theme.spacing.md,
-    marginTop: theme.spacing.sm,
-    borderBottom: `${theme.borderWidth.normal}px solid ${theme.colors.accent}`,
-    paddingBottom: theme.spacing.xs,
-    fontFamily: theme.fonts.bold,
+    color: resumeTheme.colors.heading,
+    marginBottom: resumeTheme.spacing.md,
+    marginTop: resumeTheme.spacing.sm,
+    borderBottom: `${resumeTheme.borderWidth.normal}px solid ${resumeTheme.colors.accent}`,
+    paddingBottom: resumeTheme.spacing.xs,
+    fontFamily: resumeTheme.fonts.bold,
   },
   projectItem: {
-    marginBottom: theme.spacing.md,
-    paddingBottom: theme.spacing.sm,
-    borderBottomWidth: theme.borderWidth.thin,
-    borderBottomColor: theme.colors.border,
+    marginBottom: resumeTheme.spacing.md,
+    paddingBottom: resumeTheme.spacing.sm,
+    borderBottomWidth: resumeTheme.borderWidth.thin,
+    borderBottomColor: resumeTheme.colors.border,
   },
   projectName: {
-    fontSize: theme.fontSize.md,
+    fontSize: resumeTheme.fontSize.md,
     fontWeight: "bold",
-    color: theme.colors.primary,
-    marginBottom: theme.spacing.xs,
-    fontFamily: theme.fonts.bold,
+    color: resumeTheme.colors.primary,
+    marginBottom: resumeTheme.spacing.xs,
+    fontFamily: resumeTheme.fonts.bold,
   },
   projectRole: {
-    fontSize: theme.fontSize.sm,
-    color: theme.colors.secondary,
-    marginBottom: theme.spacing.xs,
-    fontFamily: theme.fonts.primary,
+    fontSize: resumeTheme.fontSize.sm,
+    color: resumeTheme.colors.secondary,
+    marginBottom: resumeTheme.spacing.xs,
+    fontFamily: resumeTheme.fonts.primary,
   },
   projectDuration: {
-    fontSize: theme.fontSize.sm,
-    color: theme.colors.destructive,
-    marginBottom: theme.spacing.xs,
-    fontFamily: theme.fonts.bold,
+    fontSize: resumeTheme.fontSize.sm,
+    color: resumeTheme.colors.destructive,
+    marginBottom: resumeTheme.spacing.xs,
+    fontFamily: resumeTheme.fonts.bold,
   },
   tasksList: {
-    marginTop: theme.spacing.xs,
+    marginTop: resumeTheme.spacing.xs,
   },
   task: {
-    fontSize: theme.fontSize.sm,
-    color: theme.colors.secondary,
+    fontSize: resumeTheme.fontSize.sm,
+    color: resumeTheme.colors.secondary,
     lineHeight: 1.2,
-    marginBottom: theme.spacing.xs,
-    paddingLeft: theme.spacing.md,
-    fontFamily: theme.fonts.primary,
+    marginBottom: resumeTheme.spacing.xs,
+    paddingLeft: resumeTheme.spacing.md,
+    fontFamily: resumeTheme.fonts.primary,
   },
   placeholderText: {
-    fontSize: theme.fontSize.sm,
-    color: theme.colors.caption,
+    fontSize: resumeTheme.fontSize.sm,
+    color: resumeTheme.colors.caption,
     fontStyle: "italic",
-    fontFamily: theme.fonts.primary,
+    fontFamily: resumeTheme.fonts.primary,
   },
 });
 

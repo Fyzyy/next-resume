@@ -1,6 +1,7 @@
 export type Profile = {
   name: string;
   title: string;
+  role: string; // Ajout du rôle
   photo?: string; // Chemin vers l'image de profil (optionnel)
   location: string[];
   email: string;
@@ -42,6 +43,8 @@ export type Project = {
   start: string;
   end: string;
   tasks: string[];
+  srcUrl?: string; // URL du code source (optionnel)
+  demoUrl?: string; // URL de la démo (optionnel)
 };
 
 export type resumeType = {
@@ -49,7 +52,7 @@ export type resumeType = {
   skills: Skills;
   experience: Experience[];
   education: Education[];
-  projects?: Project[]; // Ajout du champ projects
+  projects?: Project[];
   languages?: Language[];
   interests?: string[];
 };

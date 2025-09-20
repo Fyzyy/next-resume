@@ -1,5 +1,5 @@
 // Thème moderne en noir et gris - élégance et sophistication maximales
-export const theme = {
+export const resumeTheme = {
   colors: {
     // Couleurs principales - palette noir et gris pure
     primary: "#0a0a0a", // Noir profond - Texte principal

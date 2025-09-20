@@ -1,7 +1,7 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
-import { Github, Heart, Linkedin, Mail } from "lucide-react";
+import {Separator} from "@/components/ui/separator";
+import {Github, Heart, Linkedin, Mail} from "lucide-react";
 
 interface FooterProps {
   data: any;
@@ -28,9 +28,9 @@ export function Footer({ data }: FooterProps) {
             <h3 className="text-lg font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
               {[
+                { label: "Skills", id: "skills" },
                 { label: "Experience", id: "experience" },
                 { label: "Projects", id: "projects" },
-                { label: "Skills", id: "skills" },
                 { label: "Contact", id: "contact" },
               ].map((item) => (
                 <li key={item.id}>

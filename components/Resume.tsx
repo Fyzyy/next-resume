@@ -1,17 +1,17 @@
 "use client";
 
-import { Document, Page, View, StyleSheet } from "@react-pdf/renderer";
-import { resumeType } from "@/types/resumeType";
-import { theme } from "@/styles/theme";
+import {Document, Page, StyleSheet, View} from "@react-pdf/renderer";
+import {resumeType} from "@/types/resumeType";
+import {resumeTheme} from "@/styles/resume-theme";
 import {
-  ProfileSection,
-  ContactSection,
-  SkillsSection,
-  EducationSection,
-  ExperienceSection,
-  ProjectsSection,
-  LanguagesSection,
-  InterestsSection,
+    ContactSection,
+    EducationSection,
+    ExperienceSection,
+    InterestsSection,
+    LanguagesSection,
+    ProfileSection,
+    ProjectsSection,
+    SkillsSection,
 } from "./resume";
 
 interface ResumeProps {
@@ -21,24 +21,24 @@ interface ResumeProps {
 export default function Resume({ data }: ResumeProps) {
   const styles = StyleSheet.create({
     page: {
-      backgroundColor: theme.colors.background,
-      padding: theme.spacing.xxl,
-      fontFamily: theme.fonts.primary,
-      fontSize: theme.fontSize.sm,
+      backgroundColor: resumeTheme.colors.background,
+      padding: resumeTheme.spacing.xxl,
+      fontFamily: resumeTheme.fonts.primary,
+      fontSize: resumeTheme.fontSize.sm,
     },
     mainContent: {
       flexDirection: "row",
       flex: 1,
-      gap: theme.spacing.xl,
+      gap: resumeTheme.spacing.xl,
     },
     leftColumn: {
       flex: 1,
-      paddingRight: theme.spacing.md,
+      paddingRight: resumeTheme.spacing.md,
     },
     rightColumn: {
       flex: 2,
-      paddingLeft: theme.spacing.md,
-      borderLeft: `${theme.borderWidth.thin}px solid ${theme.colors.border}`,
+      paddingLeft: resumeTheme.spacing.md,
+      borderLeft: `${resumeTheme.borderWidth.thin}px solid ${resumeTheme.colors.border}`,
     },
   });
 

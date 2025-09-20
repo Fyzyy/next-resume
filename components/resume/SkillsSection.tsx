@@ -1,48 +1,48 @@
-import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { Skills } from "@/types/resumeType";
-import { theme } from "@/styles/theme";
+import {StyleSheet, Text, View} from "@react-pdf/renderer";
+import {Skills} from "@/types/resumeType";
+import {resumeTheme} from "@/styles/resume-theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
-    fontSize: theme.fontSize.xl,
+    fontSize: resumeTheme.fontSize.xl,
     fontWeight: "bold",
-    color: theme.colors.heading,
-    marginBottom: theme.spacing.md,
-    marginTop: theme.spacing.lg,
-    borderBottom: `${theme.borderWidth.normal}px solid ${theme.colors.accent}`,
-    paddingBottom: theme.spacing.xs,
-    fontFamily: theme.fonts.bold,
+    color: resumeTheme.colors.heading,
+    marginBottom: resumeTheme.spacing.md,
+    marginTop: resumeTheme.spacing.lg,
+    borderBottom: `${resumeTheme.borderWidth.normal}px solid ${resumeTheme.colors.accent}`,
+    paddingBottom: resumeTheme.spacing.xs,
+    fontFamily: resumeTheme.fonts.bold,
   },
   categoryContainer: {
-    marginBottom: theme.spacing.lg,
+    marginBottom: resumeTheme.spacing.lg,
   },
   categoryTitle: {
-    fontSize: theme.fontSize.base,
+    fontSize: resumeTheme.fontSize.base,
     fontWeight: "bold",
-    color: theme.colors.subheading,
-    marginBottom: theme.spacing.sm,
-    fontFamily: theme.fonts.bold,
+    color: resumeTheme.colors.subheading,
+    marginBottom: resumeTheme.spacing.sm,
+    fontFamily: resumeTheme.fonts.bold,
     textTransform: "uppercase",
     letterSpacing: 0.5,
   },
   skillsGrid: {
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: theme.spacing.xs,
+    gap: resumeTheme.spacing.xs,
   },
   skillBadge: {
-    backgroundColor: theme.colors.muted_background,
-    borderRadius: theme.borderRadius.md,
-    paddingHorizontal: theme.spacing.md,
-    paddingVertical: theme.spacing.xs,
-    marginRight: theme.spacing.xs,
-    marginBottom: theme.spacing.xs,
-    border: `${theme.borderWidth.thin}px solid ${theme.colors.border}`,
+    backgroundColor: resumeTheme.colors.muted_background,
+    borderRadius: resumeTheme.borderRadius.md,
+    paddingHorizontal: resumeTheme.spacing.md,
+    paddingVertical: resumeTheme.spacing.xs,
+    marginRight: resumeTheme.spacing.xs,
+    marginBottom: resumeTheme.spacing.xs,
+    border: `${resumeTheme.borderWidth.thin}px solid ${resumeTheme.colors.border}`,
   },
   skillText: {
-    fontSize: theme.fontSize.xs,
-    color: theme.colors.secondary,
-    fontFamily: theme.fonts.primary,
+    fontSize: resumeTheme.fontSize.xs,
+    color: resumeTheme.colors.secondary,
+    fontFamily: resumeTheme.fonts.primary,
     fontWeight: "500",
   },
 });

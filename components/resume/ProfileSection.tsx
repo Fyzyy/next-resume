@@ -1,19 +1,19 @@
-import { Text, View, StyleSheet, Image } from "@react-pdf/renderer";
-import { Profile } from "@/types/resumeType";
-import { theme } from "@/styles/theme";
+import {Image, StyleSheet, Text, View} from "@react-pdf/renderer";
+import {Profile} from "@/types/resumeType";
+import {resumeTheme} from "@/styles/resume-theme";
 
 const styles = StyleSheet.create({
   header: {
     alignItems: "center",
-    marginBottom: theme.spacing.xxl,
-    paddingBottom: theme.spacing.lg,
-    borderBottom: `${theme.borderWidth.thick}px solid ${theme.colors.heading}`,
+    marginBottom: resumeTheme.spacing.xxl,
+    paddingBottom: resumeTheme.spacing.lg,
+    borderBottom: `${resumeTheme.borderWidth.thick}px solid ${resumeTheme.colors.heading}`,
   },
   profileContainer: {
     flexDirection: "row",
     alignItems: "center",
-    gap: theme.spacing.xl,
-    marginBottom: theme.spacing.lg,
+    gap: resumeTheme.spacing.xl,
+    marginBottom: resumeTheme.spacing.lg,
     width: "100%",
     justifyContent: "center",
   },
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
     overflow: "hidden",
-    border: `${theme.borderWidth.thick}px solid ${theme.colors.accent}`,
+    border: `${resumeTheme.borderWidth.thick}px solid ${resumeTheme.colors.accent}`,
   },
   photo: {
     width: "100%",
@@ -31,31 +31,31 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     alignItems: "flex-start",
-    marginLeft: theme.spacing.xl,
+    marginLeft: resumeTheme.spacing.xl,
   },
   name: {
-    fontSize: theme.fontSize.name,
+    fontSize: resumeTheme.fontSize.name,
     fontWeight: "bold",
-    color: theme.colors.heading,
-    marginBottom: theme.spacing.sm,
-    fontFamily: theme.fonts.bold,
+    color: resumeTheme.colors.heading,
+    marginBottom: resumeTheme.spacing.sm,
+    fontFamily: resumeTheme.fonts.bold,
   },
   title: {
-    fontSize: theme.fontSize.title,
-    color: theme.colors.accent,
+    fontSize: resumeTheme.fontSize.title,
+    color: resumeTheme.colors.accent,
     fontWeight: "medium",
-    fontFamily: theme.fonts.primary,
+    fontFamily: resumeTheme.fonts.primary,
   },
   summary: {
-    fontSize: theme.fontSize.base,
-    color: theme.colors.secondary,
+    fontSize: resumeTheme.fontSize.base,
+    color: resumeTheme.colors.secondary,
     lineHeight: 1.3,
     textAlign: "left",
-    marginTop: theme.spacing.md,
-    paddingTop: theme.spacing.md,
-    borderTop: `${theme.borderWidth.normal}px solid ${theme.colors.border}`,
+    marginTop: resumeTheme.spacing.md,
+    paddingTop: resumeTheme.spacing.md,
+    borderTop: `${resumeTheme.borderWidth.normal}px solid ${resumeTheme.colors.border}`,
     maxWidth: "85%",
-    fontFamily: theme.fonts.primary,
+    fontFamily: resumeTheme.fonts.primary,
   },
 });
 

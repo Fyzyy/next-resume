@@ -1,34 +1,34 @@
-import { Text, View, StyleSheet } from "@react-pdf/renderer";
-import { Language } from "@/types/resumeType";
-import { theme } from "@/styles/theme";
+import {StyleSheet, Text, View} from "@react-pdf/renderer";
+import {Language} from "@/types/resumeType";
+import {resumeTheme} from "@/styles/resume-theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
-    fontSize: theme.fontSize.xl,
+    fontSize: resumeTheme.fontSize.xl,
     fontWeight: "bold",
-    color: theme.colors.heading,
-    marginBottom: theme.spacing.md,
-    marginTop: theme.spacing.lg,
-    borderBottom: `${theme.borderWidth.normal}px solid ${theme.colors.accent}`,
-    paddingBottom: theme.spacing.xs,
-    fontFamily: theme.fonts.bold,
+    color: resumeTheme.colors.heading,
+    marginBottom: resumeTheme.spacing.md,
+    marginTop: resumeTheme.spacing.lg,
+    borderBottom: `${resumeTheme.borderWidth.normal}px solid ${resumeTheme.colors.accent}`,
+    paddingBottom: resumeTheme.spacing.xs,
+    fontFamily: resumeTheme.fonts.bold,
   },
   languageItem: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: theme.spacing.sm,
+    marginBottom: resumeTheme.spacing.sm,
     alignItems: "center",
   },
   languageName: {
-    fontSize: theme.fontSize.sm,
-    color: theme.colors.primary,
-    fontFamily: theme.fonts.primary,
+    fontSize: resumeTheme.fontSize.sm,
+    color: resumeTheme.colors.primary,
+    fontFamily: resumeTheme.fonts.primary,
   },
   languageLevel: {
-    fontSize: theme.fontSize.sm,
-    color: theme.colors.caption,
+    fontSize: resumeTheme.fontSize.sm,
+    color: resumeTheme.colors.caption,
     fontStyle: "italic",
-    fontFamily: theme.fonts.primary,
+    fontFamily: resumeTheme.fonts.primary,
   },
 });
 

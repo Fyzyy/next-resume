@@ -1,33 +1,33 @@
-import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { theme } from "@/styles/theme";
+import {StyleSheet, Text, View} from "@react-pdf/renderer";
+import {resumeTheme} from "@/styles/resume-theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
-    fontSize: theme.fontSize.xl,
+    fontSize: resumeTheme.fontSize.xl,
     fontWeight: "bold",
-    color: theme.colors.heading,
-    marginBottom: theme.spacing.md,
-    marginTop: theme.spacing.lg,
-    borderBottom: `${theme.borderWidth.normal}px solid ${theme.colors.accent}`,
-    paddingBottom: theme.spacing.xs,
-    fontFamily: theme.fonts.bold,
+    color: resumeTheme.colors.heading,
+    marginBottom: resumeTheme.spacing.md,
+    marginTop: resumeTheme.spacing.lg,
+    borderBottom: `${resumeTheme.borderWidth.normal}px solid ${resumeTheme.colors.accent}`,
+    paddingBottom: resumeTheme.spacing.xs,
+    fontFamily: resumeTheme.fonts.bold,
   },
   interestsList: {
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: theme.spacing.sm,
+    gap: resumeTheme.spacing.sm,
   },
   interest: {
-    fontSize: theme.fontSize.xs,
-    color: theme.colors.secondary,
-    backgroundColor: theme.colors.muted_background,
-    paddingHorizontal: theme.spacing.md,
-    paddingVertical: theme.spacing.xs,
-    borderRadius: theme.borderRadius.md,
-    border: `${theme.borderWidth.thin}px solid ${theme.colors.border}`,
-    marginRight: theme.spacing.xs,
-    marginBottom: theme.spacing.xs,
-    fontFamily: theme.fonts.primary,
+    fontSize: resumeTheme.fontSize.xs,
+    color: resumeTheme.colors.secondary,
+    backgroundColor: resumeTheme.colors.muted_background,
+    paddingHorizontal: resumeTheme.spacing.md,
+    paddingVertical: resumeTheme.spacing.xs,
+    borderRadius: resumeTheme.borderRadius.md,
+    border: `${resumeTheme.borderWidth.thin}px solid ${resumeTheme.colors.border}`,
+    marginRight: resumeTheme.spacing.xs,
+    marginBottom: resumeTheme.spacing.xs,
+    fontFamily: resumeTheme.fonts.primary,
     fontWeight: "500",
   },
 });

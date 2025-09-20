@@ -1,13 +1,20 @@
 "use client";
 
-import {resumeType} from "@/types/resumeType";
+import { resumeType } from "@/types/resumeType";
 import resumeData from "@/data/maximilien.json";
 import Resume from "@/components/Resume";
-import {Button} from "@/components/ui/button";
-import {ArrowLeft, ChevronLeft, ChevronRight, Download, Moon, Sun,} from "lucide-react";
-import {useEffect, useState} from "react";
-import {useTheme} from "next-themes";
-import {pdf} from "@react-pdf/renderer";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
+  Download,
+  Moon,
+  Sun,
+} from "lucide-react";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { pdf } from "@react-pdf/renderer";
 import dynamic from "next/dynamic";
 
 // Import des styles CSS nécessaires pour react-pdf
