@@ -37,9 +37,9 @@ export function EducationSection({ data }: EducationSectionProps) {
                         <h3 className="text-lg sm:text-xl font-semibold mb-1 leading-tight">
                           {edu.degree}
                         </h3>
-                        <div className="flex items-center text-muted-foreground mb-2">
-                          <School className="w-4 h-4 mr-2 shrink-0" />
-                          <span className="text-sm sm:text-base truncate">
+                        <div className="flex items-start text-muted-foreground mb-2">
+                          <School className="w-4 h-4 mr-2 shrink-0 mt-0.5" />
+                          <span className="text-sm sm:text-base leading-tight break-words">
                             {edu.school}
                           </span>
                         </div>
@@ -50,13 +50,6 @@ export function EducationSection({ data }: EducationSectionProps) {
                           </span>
                         </div>
                       </div>
-
-                      <Badge
-                        variant="outline"
-                        className="self-start text-xs sm:text-sm shrink-0"
-                      >
-                        {edu.end === "2025" ? "In Progress" : "Graduated"}
-                      </Badge>
                     </div>
                   </div>
                 </CardHeader>
