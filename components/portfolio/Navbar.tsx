@@ -200,8 +200,8 @@ export function Navbar() {
                     <NavigationMenuTrigger className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-full">
                       Menu
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="w-[calc(100vw-2rem)] max-w-sm p-4 -translate-x-1/2 left-1/2">
-                      <div className="grid gap-2">
+                    <NavigationMenuContent className="w-[calc(100vw-1rem)] max-w-md p-4 left-1/2 -translate-x-1/2">
+                      <div className="grid gap-2 w-full">
                         <div className="pb-2 mb-2 border-b">
                           <p className="text-sm font-medium">Navigate to</p>
                           <p className="text-xs text-muted-foreground">
@@ -214,17 +214,17 @@ export function Navbar() {
                             <NavigationMenuLink
                               key={item.id}
                               className={cn(
-                                "flex items-center space-x-3 p-3 rounded-lg cursor-pointer transition-all duration-200",
+                                "flex items-center space-x-3 p-4 rounded-lg cursor-pointer transition-all duration-200 w-full",
                                 activeSection === item.id
                                   ? "bg-primary/10 text-primary font-medium"
                                   : "hover:bg-accent",
                               )}
                               onClick={() => scrollToSection(item.id)}
                             >
-                              <IconComponent className="w-4 h-4" />
-                              <span>{item.label}</span>
+                              <IconComponent className="w-5 h-5 flex-shrink-0" />
+                              <span className="flex-1 text-left">{item.label}</span>
                               {activeSection === item.id && (
-                                <div className="ml-auto w-2 h-2 bg-primary rounded-full" />
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
                               )}
                             </NavigationMenuLink>
                           );
@@ -233,10 +233,10 @@ export function Navbar() {
                           <NavigationMenuLink asChild>
                             <a
                               href="/resume"
-                              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-accent cursor-pointer"
+                              className="flex items-center space-x-3 p-4 rounded-lg hover:bg-accent cursor-pointer w-full"
                             >
-                              <FileText className="w-4 h-4" />
-                              <span>View Resume</span>
+                              <FileText className="w-5 h-5 flex-shrink-0" />
+                              <span className="flex-1 text-left">View Resume</span>
                             </a>
                           </NavigationMenuLink>
                         </div>
