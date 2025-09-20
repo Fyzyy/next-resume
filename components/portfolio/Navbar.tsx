@@ -1,27 +1,19 @@
 "use client";
 
+import {Briefcase, FileText, FolderOpen, GraduationCap, Home, Mail, Settings,} from "lucide-react";
+import {useEffect, useState} from "react";
+import {Button} from "@/components/ui/button";
 import {
-  Briefcase,
-  FileText,
-  FolderOpen,
-  GraduationCap,
-  Home,
-  Mail,
-  Settings,
-} from "lucide-react";
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
-import { ThemeToggle } from "./ThemeToggle";
-import { resumeType } from "@/types/resumeType";
+import {cn} from "@/lib/utils";
+import {ThemeToggle} from "./ThemeToggle";
+import {resumeType} from "@/types/resumeType";
 import resumeData from "@/data/maximilien.json";
 
 const iconMap = {
@@ -184,14 +176,14 @@ export function Navbar() {
               </a>
             </Button>
 
-            <NavigationMenu viewport={false}>
+            <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-full">
                     {navItems.find((item) => item.id === activeSection)
                       ?.label || "Navigation"}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="min-w-[250px] w-[75vw] max-w-xs p-3 mt-4 bg-popover border rounded-md shadow-lg absolute top-full right-0 z-50">
+                  <NavigationMenuContent className="bg-popover border rounded-md shadow-lg z-50">
                     <div className="grid gap-2">
                       <div className="pb-2 mb-2 border-b">
                         <p className="text-sm font-medium">Navigate to</p>
