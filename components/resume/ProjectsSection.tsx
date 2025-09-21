@@ -49,22 +49,6 @@ const styles = StyleSheet.create({
     paddingLeft: resumeTheme.spacing.md,
     fontFamily: resumeTheme.fonts.primary,
   },
-  technologiesContainer: {
-    marginTop: resumeTheme.spacing.sm,
-  },
-  technologiesTitle: {
-    fontSize: resumeTheme.fontSize.sm,
-    fontWeight: "bold",
-    color: resumeTheme.colors.primary,
-    marginBottom: resumeTheme.spacing.xs,
-    fontFamily: resumeTheme.fonts.bold,
-  },
-  technologiesText: {
-    fontSize: resumeTheme.fontSize.sm,
-    color: resumeTheme.colors.secondary,
-    lineHeight: 1.2,
-    fontFamily: resumeTheme.fonts.primary,
-  },
   placeholderText: {
     fontSize: resumeTheme.fontSize.sm,
     color: resumeTheme.colors.caption,
@@ -98,7 +82,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
     return `${months[parseInt(month, 10) - 1]} ${year}`;
   };
 
-  // Limiter à 2 projets les plus récents pour le CV
+  // Limiter à 2 projets les plus récents pour le CV (sans filtrage par type)
   const limitedProjects = projects?.slice(0, 2) || [];
 
   return (
@@ -108,7 +92,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         limitedProjects.map((project, index) => (
           <View key={index} style={styles.projectItem}>
             <Text style={styles.projectName}>{project.name}</Text>
-            <Text style={styles.projectRole}>{project.role}</Text>
+            {/* Suppression de l'affichage du rôle (Academic/Personal Project) */}
             <Text style={styles.projectDuration}>
               {formatDate(project.start)} - {formatDate(project.end)}
             </Text>
@@ -120,15 +104,6 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                     • {task}
                   </Text>
                 ))}
-              </View>
-            )}
-
-            {project.technologies && project.technologies.length > 0 && (
-              <View style={styles.technologiesContainer}>
-                <Text style={styles.technologiesTitle}>Technologies:</Text>
-                <Text style={styles.technologiesText}>
-                  {project.technologies.join(" • ")}
-                </Text>
               </View>
             )}
           </View>

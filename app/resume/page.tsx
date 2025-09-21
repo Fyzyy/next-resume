@@ -95,7 +95,7 @@ export default function ResumePage() {
         URL.revokeObjectURL(pdfUrl);
       }
     };
-  }, [data, pdfJsLoaded, pdfUrl]);
+  }, [data, pdfJsLoaded]); // Retiré pdfUrl des dépendances pour éviter la boucle infinie
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);

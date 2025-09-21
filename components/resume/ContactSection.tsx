@@ -82,6 +82,35 @@ const LocationIcon = () => (
   </Svg>
 );
 
+const WebsiteIcon = () => (
+  <Svg style={styles.icon} viewBox="0 0 24 24">
+    <Path
+      d="M21.54 15H17a2 2 0 0 0-2 2v4.54"
+      stroke={resumeTheme.colors.muted}
+      strokeWidth="2"
+      fill="none"
+    />
+    <Path
+      d="M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2v0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h3.17"
+      stroke={resumeTheme.colors.muted}
+      strokeWidth="2"
+      fill="none"
+    />
+    <Path
+      d="M11 21.54V17a2 2 0 0 0-2-2H4.46"
+      stroke={resumeTheme.colors.muted}
+      strokeWidth="2"
+      fill="none"
+    />
+    <Path
+      d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+      stroke={resumeTheme.colors.muted}
+      strokeWidth="2"
+      fill="none"
+    />
+  </Svg>
+);
+
 const LinkedInIcon = () => (
   <Svg style={styles.icon} viewBox="0 0 24 24">
     <Path
@@ -107,18 +136,17 @@ interface ContactSectionProps {
 export function ContactSection({ profile }: ContactSectionProps) {
   return (
     <View>
-      <Text style={styles.sectionTitle}>INFORMATION</Text>
+      <Text style={styles.sectionTitle}>CONTACT</Text>
 
+      {/* Email */}
       <View style={styles.contactItem}>
         <EmailIcon />
-        <Link
-          style={[styles.contactText, styles.link]}
-          src={`mailto:${profile.email}`}
-        >
-          {profile.email}
+        <Link style={styles.link} src={`mailto:${profile.email}`}>
+          <Text style={styles.contactText}>{profile.email}</Text>
         </Link>
       </View>
 
+      {/* Phone */}
       {profile.phone && (
         <View style={styles.contactItem}>
           <PhoneIcon />
@@ -126,28 +154,40 @@ export function ContactSection({ profile }: ContactSectionProps) {
         </View>
       )}
 
+      {/* Website/Portfolio URL */}
+      {profile.url && (
+        <View style={styles.contactItem}>
+          <WebsiteIcon />
+          <Link style={styles.link} src={profile.url}>
+            <Text style={styles.contactText}>
+              {profile.url.replace(/^https?:\/\//, "")}
+            </Text>
+          </Link>
+        </View>
+      )}
+
+      {/* Location */}
       <View style={styles.contactItem}>
         <LocationIcon />
         <Text style={styles.contactText}>{profile.location.join(", ")}</Text>
       </View>
 
+      {/* LinkedIn */}
       {profile.linkedin && (
         <View style={styles.contactItem}>
           <LinkedInIcon />
-          <Link
-            style={[styles.contactText, styles.link]}
-            src={profile.linkedin}
-          >
-            LinkedIn Profile
+          <Link style={styles.link} src={profile.linkedin}>
+            <Text style={styles.contactText}>LinkedIn</Text>
           </Link>
         </View>
       )}
 
+      {/* GitHub */}
       {profile.github && (
         <View style={styles.contactItem}>
           <GitHubIcon />
-          <Link style={[styles.contactText, styles.link]} src={profile.github}>
-            GitHub Profile
+          <Link style={styles.link} src={profile.github}>
+            <Text style={styles.contactText}>GitHub</Text>
           </Link>
         </View>
       )}

@@ -8,6 +8,7 @@
     "phone": "+33 6 95 84 66 81",
     "linkedin": "https://www.linkedin.com/in/maximilien-vidiani-481692244/",
     "github": "https://github.com/Fyzyy",
+    "url": "https://maxvid.dev",
     "summary": "Seeking a full-time position as a software engineer, leveraging experience in full-stack development, API design, and software quality assurance. Motivated to work in agile teams on impactful projects involving web technologies, or AI systems."
   },
   "skills": {
@@ -91,6 +92,20 @@
       "demoUrl": "https://cycloeval-demo.vercel.app"
     },
     {
+      "name": "Visualgo",
+      "role": "Academic Project",
+      "start": "2024-01",
+      "end": "2024-05",
+      "tasks": [
+        "WEB-based interactive programming environment for teaching data structures and algorithms",
+        "Develop data structure implementation (stack, queue, linked list, tree, graph)",
+        "Use python debugger to step through algorithms",
+        "Work with a team of 6 students"
+      ],
+      "technologies": ["JavaScript", "HTML/CSS", "Python", "Git"],
+      "demoUrl": "https://pfa-visualgo.github.io/Visualgo/ui/index.html"
+    },
+    {
       "name": "Next.js Portfolio",
       "role": "Personal Project",
       "start": "2025-07",
@@ -121,20 +136,6 @@
       ],
       "technologies": ["Android", "Java", "OpenData", "REST API"],
       "srcUrl": "https://github.com/Fyzyy/smart-intersections"
-    },
-    {
-      "name": "Visualgo",
-      "role": "Academic Project",
-      "start": "2024-01",
-      "end": "2024-05",
-      "tasks": [
-        "WEB-based interactive programming environment for teaching data structures and algorithms",
-        "Develop data structure implementation (stack, queue, linked list, tree, graph)",
-        "Use python debugger to step through algorithms",
-        "Work with a team of 6 students"
-      ],
-      "technologies": ["JavaScript", "HTML/CSS", "Python", "Git"],
-      "demoUrl": "https://pfa-visualgo.github.io/Visualgo/ui/index.html"
     }
   ],
   "education": [

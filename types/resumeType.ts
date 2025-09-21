@@ -8,6 +8,7 @@ export type Profile = {
   phone?: string;
   linkedin?: string;
   github?: string;
+  url?: string; // URL vers portfolio ou site web
   summary: string;
 };
 
