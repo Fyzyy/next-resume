@@ -1,6 +1,6 @@
-import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
-import { Experience } from "@/types/resumeType";
-import { resumeTheme } from "@/styles/resume-theme";
+import {Image, StyleSheet, Text, View} from "@react-pdf/renderer";
+import {Experience} from "@/types/resumeType";
+import {resumeTheme} from "@/styles/resume-theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
@@ -108,10 +108,13 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
     return `${months[parseInt(month) - 1]} ${year}`;
   };
 
+  // Limiter à 3 expériences les plus récentes pour le CV
+  const limitedExperience = experience.slice(0, 3);
+
   return (
     <View>
       <Text style={styles.sectionTitle}>EXPERIENCE</Text>
-      {experience.map((exp, index) => (
+      {limitedExperience.map((exp, index) => (
         <View key={index} style={styles.experienceItem}>
           <Text style={styles.role}>{exp.role}</Text>
 

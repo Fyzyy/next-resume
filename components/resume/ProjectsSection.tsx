@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { Project } from "@/types/resumeType";
-import { resumeTheme } from "@/styles/resume-theme";
+import {StyleSheet, Text, View} from "@react-pdf/renderer";
+import {Project} from "@/types/resumeType";
+import {resumeTheme} from "@/styles/resume-theme";
 
 const styles = StyleSheet.create({
   sectionTitle: {
@@ -82,11 +82,14 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
     return `${months[parseInt(month) - 1]} ${year}`;
   };
 
+  // Limiter à 2 projets les plus récents pour le CV
+  const limitedProjects = projects?.slice(0, 2) || [];
+
   return (
     <View>
       <Text style={styles.sectionTitle}>PROJECTS</Text>
-      {projects && projects.length > 0 ? (
-        projects.map((project, index) => (
+      {limitedProjects && limitedProjects.length > 0 ? (
+        limitedProjects.map((project, index) => (
           <View key={index} style={styles.projectItem}>
             <Text style={styles.projectName}>{project.name}</Text>
             <Text style={styles.projectRole}>{project.role}</Text>
@@ -107,7 +110,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         ))
       ) : (
         <Text style={styles.placeholderText}>
-          Projects section coming soon...
+          No projects available
         </Text>
       )}
     </View>

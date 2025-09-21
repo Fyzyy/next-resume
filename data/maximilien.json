@@ -27,7 +27,7 @@
       "SQL"
     ],
     "DevOps": ["GitHub", "Azure DevOps", "Docker", "Kubernetes"],
-    "Tools": ["IntelliJ", "LLM", "Jira"]
+    "Tools": ["IntelliJ", "LLM", "Jira", "Confluence"]
   },
   "experience": [
     {
@@ -86,7 +86,7 @@
         "Implemented a FastAPI backend for data processing and SQLite storage",
         "Built a React + Leaflet interface to visualize routes and risky areas"
       ],
-      "srcUrl": "https://github.com/Fyzyy/CycloEval",
+      "srcUrl": "https://github.com/cyloEval/CycloEval",
       "demoUrl": "https://cycloeval-demo.vercel.app"
     },
     {
@@ -99,6 +99,32 @@
         "Integrated OpenData Bordeaux Métropole to provide traffic and signal information"
       ],
       "srcUrl": "https://github.com/Fyzyy/smart-intersections"
+    },
+    {
+      "name": "Next.js Portfolio",
+      "role": "Personal Project",
+      "start": "2025-07",
+      "end": "present",
+      "tasks": [
+        "Created a portfolio website using Next.js",
+        "Deployed the website on Vercel",
+        "Render resume with react-pdf from json data"
+      ],
+      "srcUrl": "https://github.com/Fyzyy/next-resume",
+      "demoUrl": "https://maxvid.dev"
+    },
+    {
+      "name": "Visualgo",
+      "role": "Academic Project",
+      "start": "2024-01",
+      "end": "2024-05",
+      "tasks": [
+        "WEB-based interactive programming environment for teaching data structures and algorithms",
+        "Develop data structure implementation (stack, queue, linked list, tree, graph)",
+        "Use python debugger to step through algorithms",
+        "Work with a team of 6 students"
+      ],
+      "demoUrl": "https://pfa-visualgo.github.io/Visualgo/ui/index.html"
     }
   ],
   "education": [
