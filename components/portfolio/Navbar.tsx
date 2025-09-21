@@ -69,7 +69,8 @@ export function Navbar() {
         "education",
         "contact",
       ];
-      const scrollPos = window.scrollY + 120;
+
+      const scrollPos = window.scrollY + 105;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
