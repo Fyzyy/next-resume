@@ -1,9 +1,9 @@
 "use client";
 
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Calendar, ExternalLink, Github } from "lucide-react";
+import {Card, CardContent, CardHeader} from "@/components/ui/card";
+import {Button} from "@/components/ui/button";
+import {Badge} from "@/components/ui/badge";
+import {Calendar, ExternalLink, Github} from "lucide-react";
 
 interface ProjectsSectionProps {
   data: any;
@@ -30,16 +30,6 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
       return `${monthNames[parseInt(month) - 1]} 1`;
     }
     return dateStr;
-  };
-
-  const getProjectTechnologies = (projectName: string) => {
-    if (projectName === "CycloEval") {
-      return ["FastAPI", "React", "Leaflet", "SQLite", "Python", "GPS"];
-    }
-    if (projectName === "Smart Intersections") {
-      return ["Android", "Java", "OpenData", "API REST"];
-    }
-    return [];
   };
 
   return (
@@ -106,8 +96,8 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
                     Technologies Used
                   </h4>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {getProjectTechnologies(project.name).map(
-                      (tech, techIndex) => (
+                    {project.technologies?.map(
+                      (tech: string, techIndex: number) => (
                         <Badge
                           key={techIndex}
                           variant="outline"

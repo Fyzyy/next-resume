@@ -49,6 +49,22 @@ const styles = StyleSheet.create({
     paddingLeft: resumeTheme.spacing.md,
     fontFamily: resumeTheme.fonts.primary,
   },
+  technologiesContainer: {
+    marginTop: resumeTheme.spacing.sm,
+  },
+  technologiesTitle: {
+    fontSize: resumeTheme.fontSize.sm,
+    fontWeight: "bold",
+    color: resumeTheme.colors.primary,
+    marginBottom: resumeTheme.spacing.xs,
+    fontFamily: resumeTheme.fonts.bold,
+  },
+  technologiesText: {
+    fontSize: resumeTheme.fontSize.sm,
+    color: resumeTheme.colors.secondary,
+    lineHeight: 1.2,
+    fontFamily: resumeTheme.fonts.primary,
+  },
   placeholderText: {
     fontSize: resumeTheme.fontSize.sm,
     color: resumeTheme.colors.caption,
@@ -104,6 +120,15 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                     • {task}
                   </Text>
                 ))}
+              </View>
+            )}
+
+            {project.technologies && project.technologies.length > 0 && (
+              <View style={styles.technologiesContainer}>
+                <Text style={styles.technologiesTitle}>Technologies:</Text>
+                <Text style={styles.technologiesText}>
+                  {project.technologies.join(" • ")}
+                </Text>
               </View>
             )}
           </View>

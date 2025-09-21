@@ -43,6 +43,7 @@ export type Project = {
   start: string;
   end: string;
   tasks: string[];
+  technologies?: string[];
   srcUrl?: string;
   demoUrl?: string;
 };

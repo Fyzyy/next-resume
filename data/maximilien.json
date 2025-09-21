@@ -86,6 +86,7 @@
         "Implemented a FastAPI backend for data processing and SQLite storage",
         "Built a React + Leaflet interface to visualize routes and risky areas"
       ],
+      "technologies": ["FastAPI", "React", "Leaflet", "SQLite", "Python"],
       "srcUrl": "https://github.com/cyloEval/CycloEval",
       "demoUrl": "https://cycloeval-demo.vercel.app"
     },
@@ -98,6 +99,7 @@
         "Designed a basic Android app to improve intersection safety in Bordeaux",
         "Integrated OpenData Bordeaux Métropole to provide traffic and signal information"
       ],
+      "technologies": ["Android", "Java", "OpenData", "REST API"],
       "srcUrl": "https://github.com/Fyzyy/smart-intersections"
     },
     {
@@ -110,6 +112,7 @@
         "Deployed the website on Vercel",
         "Render resume with react-pdf from json data"
       ],
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind", "Vercel"],
       "srcUrl": "https://github.com/Fyzyy/next-resume",
       "demoUrl": "https://maxvid.dev"
     },
@@ -124,6 +127,7 @@
         "Use python debugger to step through algorithms",
         "Work with a team of 6 students"
       ],
+      "technologies": ["JavaScript", "HTML/CSS", "Python", "Git"],
       "demoUrl": "https://pfa-visualgo.github.io/Visualgo/ui/index.html"
     }
   ],

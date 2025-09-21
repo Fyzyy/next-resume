@@ -97,7 +97,8 @@ Create or modify the `data/[your-name].json` file with your personal information
         "Microservices architecture with Docker",
         "Modern user interface with Next.js",
         "Integrated secure payment system"
-      ]
+      ],
+      "technologies": ["Next.js", "Docker", "Stripe", "PostgreSQL", "TypeScript"]
     },
     {
       "name": "Mobile App Analytics",
@@ -108,7 +109,8 @@ Create or modify the `data/[your-name].json` file with your personal information
         "Real-time analytics dashboard",
         "Data visualizations with Chart.js",
         "GraphQL API for data"
-      ]
+      ],
+      "technologies": ["React", "Chart.js", "GraphQL", "Node.js"]
     }
   ],
   "education": [
@@ -125,7 +127,7 @@ Create or modify the `data/[your-name].json` file with your personal information
     "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     "Backend": ["Node.js", "Express", "PostgreSQL", "MongoDB"],
     "DevOps": ["Docker", "AWS", "Kubernetes", "CI/CD"],
-    "yoursCategory": ["yourSkill1", "yourSkill2"],
+    "yoursCategory": ["yourSkill1", "yourSkill2"]
   },
   "languages": [
     {
