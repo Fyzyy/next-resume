@@ -41,6 +41,8 @@ pnpm dev
 
 Create or modify the `data/[your-name].json` file with your personal information. Here's a complete example:
 
+> **💡 Note:** You can refer to the `resumeType` in `types/resumeType.ts` to see which fields are optional (marked with `?`) or required.
+
 ```json
 {
   "profile": {
