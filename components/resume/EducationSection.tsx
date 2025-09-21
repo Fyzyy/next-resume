@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { Education } from "@/types/resumeType";
 import { resumeTheme } from "@/styles/resume-theme";
+import type { Education } from "@/types/resumeType";
 
 const styles = StyleSheet.create({
   sectionTitle: {

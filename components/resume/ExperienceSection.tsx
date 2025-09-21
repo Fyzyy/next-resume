@@ -1,6 +1,6 @@
-import {Image, StyleSheet, Text, View} from "@react-pdf/renderer";
-import {Experience} from "@/types/resumeType";
-import {resumeTheme} from "@/styles/resume-theme";
+import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
+import { resumeTheme } from "@/styles/resume-theme";
+import type { Experience } from "@/types/resumeType";
 
 const styles = StyleSheet.create({
   sectionTitle: {
@@ -105,7 +105,7 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
       "Nov",
       "Dec",
     ];
-    return `${months[parseInt(month) - 1]} ${year}`;
+    return `${months[parseInt(month, 10) - 1]} ${year}`;
   };
 
   // Limiter à 3 expériences les plus récentes pour le CV

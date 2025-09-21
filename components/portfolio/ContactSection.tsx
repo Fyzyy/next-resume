@@ -1,7 +1,7 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface ContactSectionProps {
   data: any;

@@ -1,9 +1,9 @@
 "use client";
 
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Database, Palette, Settings, Wrench } from "lucide-react";
-import { resumeType } from "@/types/resumeType";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import type { resumeType } from "@/types/resumeType";
 
 interface SkillsSectionProps {
   data: resumeType;

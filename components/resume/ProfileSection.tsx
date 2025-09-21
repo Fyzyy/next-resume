@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
-import { Profile } from "@/types/resumeType";
 import { resumeTheme } from "@/styles/resume-theme";
+import type { Profile } from "@/types/resumeType";
 
 const styles = StyleSheet.create({
   header: {

@@ -1,9 +1,6 @@
 "use client";
 
-import { resumeType } from "@/types/resumeType";
-import resumeData from "@/data/maximilien.json";
-import Resume from "@/components/Resume";
-import { Button } from "@/components/ui/button";
+import { pdf } from "@react-pdf/renderer";
 import {
   ArrowLeft,
   ChevronLeft,
@@ -12,10 +9,13 @@ import {
   Moon,
   Sun,
 } from "lucide-react";
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
-import { pdf } from "@react-pdf/renderer";
 import dynamic from "next/dynamic";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import Resume from "@/components/Resume";
+import { Button } from "@/components/ui/button";
+import resumeData from "@/data/maximilien.json";
+import type { resumeType } from "@/types/resumeType";
 
 // Import des styles CSS nécessaires pour react-pdf
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -38,7 +38,7 @@ export default function ResumePage() {
   const [pdfUrl, setPdfUrl] = useState<string>("");
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1);
-  const [loading, setLoading] = useState(true);
+  const [_loading, setLoading] = useState(true);
   const [pdfJsLoaded, setPdfJsLoaded] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -95,7 +95,7 @@ export default function ResumePage() {
         URL.revokeObjectURL(pdfUrl);
       }
     };
-  }, [data, pdfJsLoaded]);
+  }, [data, pdfJsLoaded, pdfUrl]);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);

@@ -1,13 +1,13 @@
-import resumeData from "@/data/maximilien.json";
-import { Navbar } from "@/components/portfolio/Navbar";
-import { HeroSection } from "@/components/portfolio/HeroSection";
-import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
-import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
-import { SkillsSection } from "@/components/portfolio/SkillsSection";
-import { EducationSection } from "@/components/portfolio/EducationSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
-import { ScrollToTop } from "@/components/portfolio/ScrollToTop";
+import { EducationSection } from "@/components/portfolio/EducationSection";
+import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
 import { Footer } from "@/components/portfolio/Footer";
+import { HeroSection } from "@/components/portfolio/HeroSection";
+import { Navbar } from "@/components/portfolio/Navbar";
+import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
+import { ScrollToTop } from "@/components/portfolio/ScrollToTop";
+import { SkillsSection } from "@/components/portfolio/SkillsSection";
+import resumeData from "@/data/maximilien.json";
 
 export default function Home() {
   return (

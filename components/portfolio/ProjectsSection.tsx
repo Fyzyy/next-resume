@@ -1,9 +1,9 @@
 "use client";
 
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {Button} from "@/components/ui/button";
-import {Badge} from "@/components/ui/badge";
-import {Calendar, ExternalLink, Github} from "lucide-react";
+import { Calendar, ExternalLink, Github } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 interface ProjectsSectionProps {
   data: any;
@@ -12,7 +12,7 @@ interface ProjectsSectionProps {
 export function ProjectsSection({ data }: ProjectsSectionProps) {
   const formatDate = (dateStr: string) => {
     if (dateStr.includes("-")) {
-      const [year, month] = dateStr.split("-");
+      const [_year, month] = dateStr.split("-");
       const monthNames = [
         "Jan",
         "Feb",
@@ -27,7 +27,7 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
         "Nov",
         "Dec",
       ];
-      return `${monthNames[parseInt(month) - 1]} 1`;
+      return `${monthNames[parseInt(month, 10) - 1]} 1`;
     }
     return dateStr;
   };

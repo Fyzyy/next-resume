@@ -1,8 +1,8 @@
 "use client";
 
 import { Document, Page, StyleSheet, View } from "@react-pdf/renderer";
-import { resumeType } from "@/types/resumeType";
 import { resumeTheme } from "@/styles/resume-theme";
+import type { resumeType } from "@/types/resumeType";
 import {
   ContactSection,
   EducationSection,

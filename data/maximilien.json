@@ -91,6 +91,26 @@
       "demoUrl": "https://cycloeval-demo.vercel.app"
     },
     {
+      "name": "Next.js Portfolio",
+      "role": "Personal Project",
+      "start": "2025-07",
+      "end": "present",
+      "tasks": [
+        "Created a portfolio website using Next.js",
+        "Deployed the website on Vercel",
+        "Render resume with react-pdf from json data"
+      ],
+      "technologies": [
+        "Next.js",
+        "ShadcnUI",
+        "TypeScript",
+        "Tailwind",
+        "Vercel"
+      ],
+      "srcUrl": "https://github.com/Fyzyy/next-resume",
+      "demoUrl": "https://maxvid.dev"
+    },
+    {
       "name": "Smart Intersections",
       "role": "Academic Project",
       "start": "2024-11",
@@ -101,20 +121,6 @@
       ],
       "technologies": ["Android", "Java", "OpenData", "REST API"],
       "srcUrl": "https://github.com/Fyzyy/smart-intersections"
-    },
-    {
-      "name": "Next.js Portfolio",
-      "role": "Personal Project",
-      "start": "2025-07",
-      "end": "present",
-      "tasks": [
-        "Created a portfolio website using Next.js",
-        "Deployed the website on Vercel",
-        "Render resume with react-pdf from json data"
-      ],
-      "technologies": ["Next.js", "React", "TypeScript", "Tailwind", "Vercel"],
-      "srcUrl": "https://github.com/Fyzyy/next-resume",
-      "demoUrl": "https://maxvid.dev"
     },
     {
       "name": "Visualgo",

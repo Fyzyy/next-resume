@@ -1,10 +1,10 @@
-export { Navbar } from "./Navbar";
-export { HeroSection } from "./HeroSection";
-export { ExperienceSection } from "./ExperienceSection";
-export { ProjectsSection } from "./ProjectsSection";
-export { SkillsSection } from "./SkillsSection";
-export { EducationSection } from "./EducationSection";
 export { ContactSection } from "./ContactSection";
-export { ScrollToTop } from "./ScrollToTop";
+export { EducationSection } from "./EducationSection";
+export { ExperienceSection } from "./ExperienceSection";
 export { Footer } from "./Footer";
+export { HeroSection } from "./HeroSection";
+export { Navbar } from "./Navbar";
+export { ProjectsSection } from "./ProjectsSection";
+export { ScrollToTop } from "./ScrollToTop";
+export { SkillsSection } from "./SkillsSection";
 export { ThemeToggle } from "./ThemeToggle";

@@ -1,7 +1,7 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
 import { Github, Heart, Linkedin, Mail } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 interface FooterProps {
   data: any;

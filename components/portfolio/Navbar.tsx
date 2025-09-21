@@ -1,20 +1,28 @@
 "use client";
 
-import {Briefcase, FileText, FolderOpen, GraduationCap, Home, Mail, Settings,} from "lucide-react";
-import {useEffect, useState} from "react";
-import {Button} from "@/components/ui/button";
 import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
+  Briefcase,
+  FileText,
+  FolderOpen,
+  GraduationCap,
+  Home,
+  Mail,
+  Settings,
+} from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import {cn} from "@/lib/utils";
-import {ThemeToggle} from "./ThemeToggle";
-import {resumeType} from "@/types/resumeType";
 import resumeData from "@/data/maximilien.json";
+import { cn } from "@/lib/utils";
+import type { resumeType } from "@/types/resumeType";
+import { ThemeToggle } from "./ThemeToggle";
 
 const iconMap = {
   Home,

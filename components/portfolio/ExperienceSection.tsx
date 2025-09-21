@@ -1,11 +1,12 @@
 "use client";
 
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Building2, Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import type { Experience, resumeType } from "@/types/resumeType";
 
 interface ExperienceSectionProps {
-  data: any;
+  data: resumeType;
 }
 
 export function ExperienceSection({ data }: ExperienceSectionProps) {
@@ -26,13 +27,13 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
         "Nov",
         "Dec",
       ];
-      return `${monthNames[parseInt(month) - 1]} ${year}`;
+      return `${monthNames[parseInt(month, 10) - 1]} ${year}`;
     }
     return dateStr;
   };
 
   return (
-    <section id="experience" className="py-16 lg:py-20 bg-muted/30">
+    <section id="experience" className="py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -48,7 +49,7 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
             <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
 
             <div className="space-y-6 lg:space-y-8">
-              {data.experience.map((exp: any, index: number) => (
+              {data.experience.map((exp: Experience, index: number) => (
                 <div key={index} className="relative">
                   <div className="absolute left-4 sm:left-6 w-4 h-4 bg-primary rounded-full border-4 border-background hidden md:block" />
 
@@ -107,7 +108,7 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
 
                     <CardContent className="pt-0 p-4 sm:p-6">
                       <ul className="space-y-2 sm:space-y-3">
-                        {exp.tasks.map((task: string, taskIndex: number) => (
+                        {exp.tasks?.map((task: string, taskIndex: number) => (
                           <li key={taskIndex} className="flex items-start">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 shrink-0" />
                             <span className="text-sm sm:text-base text-muted-foreground leading-relaxed">
