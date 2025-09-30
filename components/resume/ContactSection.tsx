@@ -131,12 +131,13 @@ const GitHubIcon = () => (
 
 interface ContactSectionProps {
   profile: Profile;
+  title: string;
 }
 
-export function ContactSection({ profile }: ContactSectionProps) {
+export function ContactSection({ profile, title }: ContactSectionProps) {
   return (
     <View>
-      <Text style={styles.sectionTitle}>CONTACT</Text>
+      <Text style={styles.sectionTitle}>{title}</Text>
 
       {/* Email */}
       <View style={styles.contactItem}>

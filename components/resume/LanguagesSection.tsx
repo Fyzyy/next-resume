@@ -34,12 +34,13 @@ const styles = StyleSheet.create({
 
 interface LanguagesSectionProps {
   languages: Language[];
+  title: string;
 }
 
-export function LanguagesSection({ languages }: LanguagesSectionProps) {
+export function LanguagesSection({ languages, title }: LanguagesSectionProps) {
   return (
     <View>
-      <Text style={styles.sectionTitle}>LANGUAGES</Text>
+      <Text style={styles.sectionTitle}>{title}</Text>
 
       {languages.map((lang, index) => (
         <View key={index} style={styles.languageItem}>

@@ -41,14 +41,18 @@ const styles = StyleSheet.create({
 
 interface EducationSectionProps {
   education: Education[];
+  title: string;
 }
 
-export function EducationSection({ education }: EducationSectionProps) {
+export function EducationSection({ education, title }: EducationSectionProps) {
   return (
     <View>
-      <Text style={styles.sectionTitle}>EDUCATION</Text>
+      <Text style={styles.sectionTitle}>{title}</Text>
       {education.map((edu, index) => (
-        <View key={index} style={styles.educationItem}>
+        <View
+          key={`${edu.school}-${edu.degree}-${edu.start ?? ""}-${edu.end ?? ""}-${index}`}
+          style={styles.educationItem}
+        >
           <Text style={styles.degree}>{edu.degree}</Text>
           <Text style={styles.school}>{edu.school}</Text>
           {(edu.start || edu.end) && (

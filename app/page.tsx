@@ -7,7 +7,7 @@ import { Navbar } from "@/components/portfolio/Navbar";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
 import { ScrollToTop } from "@/components/portfolio/ScrollToTop";
 import { SkillsSection } from "@/components/portfolio/SkillsSection";
-import resumeData from "@/data/maximilien.json";
+import resumeData from "@/data/maximilien.EN.json";
 
 export default function Home() {
   return (

@@ -59,9 +59,10 @@ const styles = StyleSheet.create({
 
 interface ProjectsSectionProps {
   projects?: Project[];
+  title: string;
 }
 
-export function ProjectsSection({ projects }: ProjectsSectionProps) {
+export function ProjectsSection({ projects, title }: ProjectsSectionProps) {
   const formatDate = (dateStr: string) => {
     if (dateStr === "Present") return "Present";
     const [year, month] = dateStr.split("-");
@@ -87,7 +88,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
 
   return (
     <View>
-      <Text style={styles.sectionTitle}>PROJECTS</Text>
+      <Text style={styles.sectionTitle}>{title}</Text>
       {limitedProjects && limitedProjects.length > 0 ? (
         limitedProjects.map((project, index) => (
           <View key={index} style={styles.projectItem}>

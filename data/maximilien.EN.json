@@ -3,11 +3,7 @@
     "name": "Maximilien Vidiani",
     "title": "Software Engineer - Fullstack",
     "role": "Software Engineer",
-    "location": [
-      "Bordeaux",
-      "Paris",
-      "Luxembourg"
-    ],
+    "location": ["Bordeaux", "Paris", "Luxembourg"],
     "email": "maximilien.vidiani@gmail.com",
     "phone": "+33 6 95 84 66 81",
     "linkedin": "https://www.linkedin.com/in/maximilien-vidiani-481692244/",
@@ -31,18 +27,8 @@
       "Python",
       "SQL"
     ],
-    "DevOps": [
-      "GitHub",
-      "Azure DevOps",
-      "Docker",
-      "Kubernetes"
-    ],
-    "Tools": [
-      "IntelliJ",
-      "LLM",
-      "Jira",
-      "Confluence"
-    ]
+    "DevOps": ["GitHub", "Azure DevOps", "Docker", "Kubernetes"],
+    "Tools": ["IntelliJ", "LLM", "Jira", "Confluence"]
   },
   "experience": [
     {
@@ -101,13 +87,7 @@
         "Implemented a FastAPI backend for data processing and SQLite storage",
         "Built a React + Leaflet interface to visualize routes and risky areas"
       ],
-      "technologies": [
-        "FastAPI",
-        "React",
-        "Leaflet",
-        "SQLite",
-        "Python"
-      ],
+      "technologies": ["FastAPI", "React", "Leaflet", "SQLite", "Python"],
       "srcUrl": "https://github.com/cyloEval/CycloEval"
     },
     {
@@ -121,12 +101,7 @@
         "Use python debugger to step through algorithms",
         "Work with a team of 6 students"
       ],
-      "technologies": [
-        "JavaScript",
-        "HTML/CSS",
-        "Python",
-        "Git"
-      ],
+      "technologies": ["JavaScript", "HTML/CSS", "Python", "Git"],
       "demoUrl": "https://pfa-visualgo.github.io/Visualgo/ui/index.html"
     },
     {
@@ -158,12 +133,7 @@
         "Designed a basic Android app to improve intersection safety in Bordeaux",
         "Integrated OpenData Bordeaux Métropole to provide traffic and signal information"
       ],
-      "technologies": [
-        "Android",
-        "Java",
-        "OpenData",
-        "REST API"
-      ],
+      "technologies": ["Android", "Java", "OpenData", "REST API"],
       "srcUrl": "https://github.com/Fyzyy/smart-intersections"
     }
   ],

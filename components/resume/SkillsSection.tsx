@@ -49,9 +49,10 @@ const styles = StyleSheet.create({
 
 interface SkillsSectionProps {
   skills: Skills;
+  title: string;
 }
 
-export function SkillsSection({ skills }: SkillsSectionProps) {
+export function SkillsSection({ skills, title }: SkillsSectionProps) {
   const renderSkillCategory = (title: string, skillList: string[]) => {
     if (!skillList || skillList.length === 0) return null;
 
@@ -71,7 +72,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
 
   return (
     <View>
-      <Text style={styles.sectionTitle}>SKILLS</Text>
+      <Text style={styles.sectionTitle}>{title}</Text>
       {Object.entries(skills).map(([category, skillList]) =>
         renderSkillCategory(category, skillList),
       )}

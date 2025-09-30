@@ -1,6 +1,7 @@
 "use client";
 
 import { Document, Page, StyleSheet, View } from "@react-pdf/renderer";
+import type { ResumeLabels } from "@/lib/i18n";
 import { resumeTheme } from "@/styles/resume-theme";
 import type { resumeType } from "@/types/resumeType";
 import {
@@ -16,9 +17,10 @@ import {
 
 interface ResumeProps {
   data: resumeType;
+  labels: ResumeLabels;
 }
 
-export default function Resume({ data }: ResumeProps) {
+export default function Resume({ data, labels }: ResumeProps) {
   const styles = StyleSheet.create({
     page: {
       backgroundColor: resumeTheme.colors.background,
@@ -52,18 +54,34 @@ export default function Resume({ data }: ResumeProps) {
         <View style={styles.mainContent}>
           {/* Colonne gauche - Informations personnelles */}
           <View style={styles.leftColumn}>
-            <ContactSection profile={data.profile} />
+            <ContactSection profile={data.profile} title={labels.contact} />
 
-            <SkillsSection skills={data.skills} />
-            <EducationSection education={data.education} />
-            {data.languages && <LanguagesSection languages={data.languages} />}
-            {data.interests && <InterestsSection interests={data.interests} />}
+            <SkillsSection skills={data.skills} title={labels.skills} />
+            <EducationSection
+              education={data.education}
+              title={labels.education}
+            />
+            {data.languages && (
+              <LanguagesSection
+                languages={data.languages}
+                title={labels.languages}
+              />
+            )}
+            {data.interests && (
+              <InterestsSection
+                interests={data.interests}
+                title={labels.interests}
+              />
+            )}
           </View>
 
           {/* Colonne droite - Expérience et projets */}
           <View style={styles.rightColumn}>
-            <ExperienceSection experience={data.experience} />
-            <ProjectsSection projects={data.projects} />
+            <ExperienceSection
+              experience={data.experience}
+              title={labels.experience}
+            />
+            <ProjectsSection projects={data.projects} title={labels.projects} />
           </View>
         </View>
       </Page>

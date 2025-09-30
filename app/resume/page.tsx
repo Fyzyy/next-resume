@@ -11,10 +11,12 @@ import {
 } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Resume from "@/components/Resume";
 import { Button } from "@/components/ui/button";
-import resumeData from "@/data/maximilien.json";
+import resumeDataEN from "@/data/maximilien.EN.json";
+import resumeDataFR from "@/data/maximilien.FR.json";
+import { resumeLabels, SupportedLocale } from "@/lib/i18n";
 import type { resumeType } from "@/types/resumeType";
 
 // Import des styles CSS nécessaires pour react-pdf
@@ -33,7 +35,6 @@ const PDFPage = dynamic(
 );
 
 export default function ResumePage() {
-  const data = resumeData as resumeType;
   const [isClient, setIsClient] = useState(false);
   const [pdfUrl, setPdfUrl] = useState<string>("");
   const [numPages, setNumPages] = useState<number>(0);
@@ -41,6 +42,21 @@ export default function ResumePage() {
   const [_loading, setLoading] = useState(true);
   const [pdfJsLoaded, setPdfJsLoaded] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  // Language selection (default to French per user preference)
+  const [language, setLanguage] = useState<"EN" | "FR">("FR");
+
+  // Memoize selected data to avoid unnecessary renders
+  const data: resumeType = useMemo(() => {
+    return language === "FR"
+      ? (resumeDataFR as resumeType)
+      : (resumeDataEN as resumeType);
+  }, [language]);
+
+  const labels = useMemo(() => {
+    const locale = language === "FR" ? SupportedLocale.FR : SupportedLocale.EN;
+    return resumeLabels[locale];
+  }, [language]);
 
   useEffect(() => {
     setIsClient(true);
@@ -74,12 +90,14 @@ export default function ResumePage() {
   useEffect(() => {
     if (!pdfJsLoaded) return;
 
-    // Générer le PDF et créer un blob URL
+    // Générer le PDF et créer un blob URL à partir de la langue sélectionnée
+    let createdUrl: string | null = null;
     const generatePDF = async () => {
       try {
         setLoading(true);
-        const blob = await pdf(<Resume data={data} />).toBlob();
+        const blob = await pdf(<Resume data={data} labels={labels} />).toBlob();
         const url = URL.createObjectURL(blob);
+        createdUrl = url;
         setPdfUrl(url);
       } catch (error) {
         console.error("Error generating PDF:", error);
@@ -91,11 +109,11 @@ export default function ResumePage() {
 
     // Cleanup function pour libérer l'URL
     return () => {
-      if (pdfUrl) {
-        URL.revokeObjectURL(pdfUrl);
+      if (createdUrl) {
+        URL.revokeObjectURL(createdUrl);
       }
     };
-  }, [data, pdfJsLoaded]); // Retiré pdfUrl des dépendances pour éviter la boucle infinie
+  }, [data, labels, pdfJsLoaded]);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
@@ -104,11 +122,12 @@ export default function ResumePage() {
 
   const handleDownloadPDF = async () => {
     try {
-      const blob = await pdf(<Resume data={data} />).toBlob();
+      const blob = await pdf(<Resume data={data} labels={labels} />).toBlob();
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `${data.profile.name.replace(/\s+/g, "_")}_Resume.pdf`;
+      const langSuffix = language === "FR" ? "FR" : "EN";
+      link.download = `${data.profile.name.replace(/\s+/g, "_")}_Resume_${langSuffix}.pdf`;
       link.click();
       URL.revokeObjectURL(url);
     } catch (error) {
@@ -140,6 +159,22 @@ export default function ResumePage() {
               Resume - {data.profile.name}
             </h1>
             <div className="flex items-center space-x-2">
+              {/* Language selector */}
+              <select
+                aria-label="Select resume language"
+                className="h-9 px-3 border rounded-md bg-background text-foreground"
+                value={language}
+                onChange={(e) => {
+                  const next = e.target.value === "FR" ? "FR" : "EN";
+                  setLanguage(next);
+                  // Reset pagination on language change
+                  setPageNumber(1);
+                }}
+              >
+                <option value="EN">English</option>
+                <option value="FR">Français</option>
+              </select>
+
               {isClient && (
                 <Button
                   variant="ghost"
@@ -194,7 +229,7 @@ export default function ResumePage() {
             </div>
           )}
 
-          {/* PDF Viewer - Design épuré */}
+          {/* PDF Viewer */}
           <div className="flex justify-center">
             {isClient && pdfJsLoaded && pdfUrl ? (
               <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">

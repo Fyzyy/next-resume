@@ -1,0 +1,170 @@
+{
+  "profile": {
+    "name": "Maximilien Vidiani",
+    "title": "Ingénieur Logiciel - Fullstack",
+    "role": "Ingénieur Logiciel",
+    "location": ["Bordeaux", "Paris", "Luxembourg"],
+    "email": "maximilien.vidiani@gmail.com",
+    "phone": "+33 6 95 84 66 81",
+    "linkedin": "https://www.linkedin.com/in/maximilien-vidiani-481692244/",
+    "github": "https://github.com/Fyzyy",
+    "url": "https://maxvid.dev",
+    "summary": "À la recherche d’un poste à temps plein comme ingénieur logiciel, en valorisant mon expérience en développement full-stack, conception d’API et assurance qualité logicielle. Motivé à travailler en équipe agile sur des projets à impact impliquant des technologies web ou des systèmes d’IA."
+  },
+  "skills": {
+    "Frontend": [
+      "Angular 19+",
+      "TypeScript",
+      "Next.js",
+      "HTML/CSS",
+      "Tailwind"
+    ],
+    "Backend": [
+      "Spring Boot",
+      "Java",
+      "PostgreSQL",
+      "OpenAPI",
+      "Python",
+      "SQL"
+    ],
+    "DevOps": ["GitHub", "Azure DevOps", "Docker", "Kubernetes"],
+    "Tools": ["IntelliJ", "LLM", "Jira", "Confluence"]
+  },
+  "experience": [
+    {
+      "company": "Banque de Luxembourg",
+      "role": "Stagiaire Fullstack",
+      "logo": "bdl.png",
+      "location": "Luxembourg",
+      "start": "2025-02",
+      "end": "2025-08",
+      "tasks": [
+        "Participation à la refonte d’une application de gestion documentaire au sein d’une équipe de 5 développeurs en environnement agile",
+        "Développement et maintenance de routes RESTful API avec Spring et OpenAPI",
+        "Contribution au développement front-end avec Angular 19",
+        "Intégration de tests front-end et back-end pour assurer la qualité et la fiabilité du code",
+        "Collaboration étroite avec l’équipe pour livrer des fonctionnalités et améliorations"
+      ]
+    },
+    {
+      "company": "CEA-LIST Laboratoire Vision et Apprentissage",
+      "role": "Stagiaire Reconnaissance UML Manuscrits",
+      "logo": "cea.png",
+      "location": "Saclay, France",
+      "start": "2024-06",
+      "end": "2024-10",
+      "tasks": [
+        "Recherche sur l’état de l’art des modèles de reconnaissance UML manuscrits",
+        "Création d’un jeu de données annoté de diagrammes UML manuscrits avec 20 participants via Label Studio",
+        "Ajustement d’un modèle Faster R-CNN ResNet50 avec PyTorch pour segmenter les diagrammes",
+        "Développement d’un démonstrateur pour l’équipe"
+      ]
+    },
+    {
+      "company": "CEA-LIST Laboratoire Vision et Apprentissage",
+      "role": "Stagiaire Full-Stack IA",
+      "logo": "cea.png",
+      "location": "Saclay, France",
+      "start": "2023-06",
+      "end": "2023-08",
+      "tasks": [
+        "Participation au développement d’une application web pour l’annotation de jeux de données assistée par IA",
+        "Contribution à l’infrastructure back-end et aux tests unitaires",
+        "Développement d’endpoints d’API avec FastAPI",
+        "Introduction à PyTorch pour l’IA"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "CycloEval",
+      "role": "Projet académique",
+      "start": "2024-10",
+      "end": "2025-01",
+      "tasks": [
+        "Développement d’un outil de détection de chocs sur pistes cyclables à partir de données accéléromètre, orientation et GPS",
+        "Filtrage des données capteurs avec un filtre passe-bas",
+        "Implémentation d’un backend FastAPI pour le traitement et stockage SQLite",
+        "Création d’une interface React + Leaflet pour visualiser trajets et zones à risque"
+      ],
+      "technologies": ["FastAPI", "React", "Leaflet", "SQLite", "Python"],
+      "srcUrl": "https://github.com/cyloEval/CycloEval"
+    },
+    {
+      "name": "Visualgo",
+      "role": "Projet académique",
+      "start": "2024-01",
+      "end": "2024-05",
+      "tasks": [
+        "Environnement interactif WEB pour l’enseignement des structures de données et algorithmes",
+        "Implémentation de structures de données (pile, file, liste chaînée, arbre, graphe)",
+        "Utilisation du débogueur Python pour exécuter pas à pas les algorithmes"
+      ],
+      "technologies": ["JavaScript", "HTML/CSS", "Python", "Git"],
+      "demoUrl": "https://pfa-visualgo.github.io/Visualgo/ui/index.html"
+    },
+    {
+      "name": "Portfolio Next.js",
+      "role": "Projet personnel",
+      "start": "2025-07",
+      "end": "présent",
+      "tasks": [
+        "Création d’un site portfolio avec Next.js",
+        "Déploiement du site sur Vercel",
+        "Affichage du CV avec react-pdf à partir de données JSON"
+      ],
+      "technologies": [
+        "Next.js",
+        "ShadcnUI",
+        "TypeScript",
+        "Tailwind",
+        "Vercel"
+      ],
+      "srcUrl": "https://github.com/Fyzyy/next-resume",
+      "demoUrl": "https://maxvid.dev"
+    },
+    {
+      "name": "Smart Intersections",
+      "role": "Projet académique",
+      "start": "2024-11",
+      "end": "2024-12",
+      "tasks": [
+        "Conception d’une application Android basique pour améliorer la sécurité des intersections à Bordeaux",
+        "Intégration des données ouvertes Bordeaux Métropole pour fournir informations trafic et signalisation"
+      ],
+      "technologies": ["Android", "Java", "OpenData", "REST API"],
+      "srcUrl": "https://github.com/Fyzyy/smart-intersections"
+    }
+  ],
+  "education": [
+    {
+      "school": "INP Bordeaux ENSEIRB-MATMECA École d’Ingénieurs",
+      "degree": "Diplôme d’ingénieur en Génie Logiciel",
+      "start": "2023",
+      "end": "2025"
+    },
+    {
+      "school": "Lycée Corot",
+      "degree": "Classes préparatoires en Mathématiques et Physique",
+      "start": "2020",
+      "end": "2022"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Français",
+      "level": "Natif"
+    },
+    {
+      "name": "Anglais",
+      "level": "B2"
+    }
+  ],
+  "interests": [
+    "Basketball",
+    "Course",
+    "Jeux vidéo",
+    "Matériel informatique",
+    "Surf"
+  ]
+}

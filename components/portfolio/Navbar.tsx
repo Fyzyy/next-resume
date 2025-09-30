@@ -19,7 +19,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import resumeData from "@/data/maximilien.json";
+import resumeData from "@/data/maximilien.EN.json";
 import { cn } from "@/lib/utils";
 import type { resumeType } from "@/types/resumeType";
 import { ThemeToggle } from "./ThemeToggle";

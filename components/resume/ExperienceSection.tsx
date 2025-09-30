@@ -85,9 +85,13 @@ const styles = StyleSheet.create({
 
 interface ExperienceSectionProps {
   experience: Experience[];
+  title: string;
 }
 
-export function ExperienceSection({ experience }: ExperienceSectionProps) {
+export function ExperienceSection({
+  experience,
+  title,
+}: ExperienceSectionProps) {
   const formatDate = (dateStr: string) => {
     if (dateStr === "Present") return "Present";
     const [year, month] = dateStr.split("-");
@@ -113,7 +117,7 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
 
   return (
     <View>
-      <Text style={styles.sectionTitle}>EXPERIENCE</Text>
+      <Text style={styles.sectionTitle}>{title}</Text>
       {limitedExperience.map((exp, index) => (
         <View key={index} style={styles.experienceItem}>
           <Text style={styles.role}>{exp.role}</Text>
